@@ -3,21 +3,22 @@ import { CommonModule } from '@angular/common';
 
 /*modules*/
 import { PirsmCodeModule } from './modules/pirsm-code.module';
-import { LoadingDirectiveModule } from './modules/loading-directive.module';
-import { InputComponentModule } from './modules/input-component.module';
+import { LoadingModule } from './modules/loading-directive.module';
+import { InputModule } from './modules/input-component.module';
+import { IconModule } from './modules/icon-component.module';
 
 @NgModule({
   imports: [
     CommonModule,
     PirsmCodeModule,
-    LoadingDirectiveModule,
-    InputComponentModule,
+    LoadingModule,
+    InputModule,
   ],
   declarations: [],
   exports: [
     PirsmCodeModule,
-    LoadingDirectiveModule,
-    InputComponentModule,
+    LoadingModule,
+    InputModule,
   ]
 })
 export class ToolsUiModule { }

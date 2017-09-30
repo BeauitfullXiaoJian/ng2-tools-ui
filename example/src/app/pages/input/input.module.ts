@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { PirsmCodeModule, InputComponentModule } from './../../tools-ui'
+import { PirsmCodeModule, InputModule as Itd } from './../../tools-ui'
 
 import { TextComponent } from './text/text.component';
 
@@ -10,7 +10,7 @@ import { TextComponent } from './text/text.component';
   imports: [
     CommonModule,
     PirsmCodeModule,
-    InputComponentModule,
+    Itd,
     RouterModule.forChild([
       { path: 'text', component: TextComponent },
     ])

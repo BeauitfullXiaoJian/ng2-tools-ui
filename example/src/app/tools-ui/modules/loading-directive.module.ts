@@ -18,4 +18,4 @@ import { ImgLoadingDirective } from './../directives/img-loading.directive';
     ImgLoadingDirective,
   ]
 })
-export class LoadingDirectiveModule { }
+export class LoadingModule { }

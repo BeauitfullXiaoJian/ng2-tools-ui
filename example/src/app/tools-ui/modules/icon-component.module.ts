@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { InputTextComponent } from './../components/input-text/input-text.component';
+import { IconComponent } from './../components/font-icon/font-icon.component';
 
 
 
@@ -10,10 +10,10 @@ import { InputTextComponent } from './../components/input-text/input-text.compon
     CommonModule
   ],
   declarations: [
-    InputTextComponent,
+    IconComponent,
   ],
   exports: [
-    InputTextComponent,
+    IconComponent,
   ]
 })
-export class InputModule { }
+export class IconModule { }
