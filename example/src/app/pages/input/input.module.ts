@@ -1,19 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { PirsmCodeModule } from './../../tools-ui'
-import { CodeComponent } from './pad/code.component';
+import { PirsmCodeModule, InputComponentModule } from './../../tools-ui'
+
+import { TextComponent } from './text/text.component';
+
 
 @NgModule({
   imports: [
     CommonModule,
     PirsmCodeModule,
+    InputComponentModule,
     RouterModule.forChild([
-      { path: 'pad', component: CodeComponent }
+      { path: 'text', component: TextComponent },
     ])
   ],
   declarations: [
-    CodeComponent,
+    TextComponent,
   ]
 })
-export class CodeModule { }
+export class InputModule { }

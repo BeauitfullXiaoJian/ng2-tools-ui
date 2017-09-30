@@ -1,0 +1,20 @@
+<div class="card rounded-0">
+  <div class="card-body">
+    <h4>Label Input<span class="pull-right"><i class="fa fa-eye"></i></span></h4>
+    <hr>
+    <div class="pt-3 pb-3">
+      <ts-input name="account" title="Your Account" placeholder="please enter your account" [(value)]="text"></ts-input>
+      <pre class="bg-dark border border-light p-2 text-light">{{text}}</pre>
+      <p class="text-danger mt-2"><i class="fa fa-code fa-fw"></i>code in your page *.html/template</p>
+      <!-- <ts-pirsm-code language="html" [code]="codes[0]"></ts-pirsm-code> -->
+    </div>
+    <h4>Span Input<span class="pull-right"><i class="fa fa-eye"></i></span></h4>
+    <hr>
+    <div class="pt-3 pb-3">
+      <ts-input name="account" title="Your Account" placeholder="please enter your account" [(value)]="text" tstyle="span"></ts-input>
+      <pre class="bg-dark border border-light p-2 text-light">{{text}}</pre>
+      <p class="text-danger mt-2"><i class="fa fa-code fa-fw"></i>code in your page *.html/template</p>
+      <!-- <ts-pirsm-code language="html" [code]="codes[0]"></ts-pirsm-code> -->
+    </div>
+  </div>
+</div>

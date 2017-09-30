@@ -1,0 +1,13 @@
+<div *ngIf="tstyle==='label'||!tstyle" class="form-group">
+  <label>{{title||'Label Title'}}</label>
+  <input #input name="{{name||'name'}}" (keyup)="setValue($event.target.value)" [value]="value||''" [type]="type||'text'" class="form-control"
+    [placeholder]="placeholder||''" [disabled]="disabled||false">
+  <small [hidden]="valid||true" class="form-text text-danger">{{errorText||''}}</small>
+</div>
+
+<div *ngIf="tstyle==='span'" class="input-group">
+  <span class="input-group-addon bg-white">{{title||'Label Title'}}</span>
+  <input #input name="{{name||'name'}}" (keyup)="setValue($event.target.value)" [value]="value||''" [type]="type||'text'" class="form-control"
+    [placeholder]="placeholder||''" [disabled]="disabled||false">
+</div>
+<p *ngIf="tstyle==='span'"><small [hidden]="valid||true" class="form-text text-danger">{{errorText||''}}</small></p>
