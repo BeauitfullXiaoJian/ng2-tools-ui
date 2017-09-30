@@ -118,7 +118,7 @@
       false,
       "attribute",
       "app",
-      "camelCase",
+      "camelCase"
     ],
     "component-selector": [
       false,

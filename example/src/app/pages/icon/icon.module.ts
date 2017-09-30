@@ -1,19 +1,22 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { TSPirsmModule } from './../../tools-ui'
-import { CodeComponent } from './pad/code.component';
+import { TSPirsmModule, TSIconModule } from './../../tools-ui';
+import { ExampleComponent } from './example/example.component';
+
+
 
 @NgModule({
   imports: [
     CommonModule,
+    TSIconModule,
     TSPirsmModule,
     RouterModule.forChild([
-      { path: 'pad', component: CodeComponent }
+      { path: 'example', component: ExampleComponent },
     ])
   ],
   declarations: [
-    CodeComponent,
+    ExampleComponent
   ]
 })
-export class CodeModule { }
+export class IconModule { }
