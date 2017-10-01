@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { TSPirsmModule, TSIconModule } from './../../tools-ui';
+import { TSPirsmModule, TSIconModule, TSTabModule } from './../../tools-ui';
 import { ExampleComponent } from './example/example.component';
 
 
@@ -11,6 +11,7 @@ import { ExampleComponent } from './example/example.component';
     CommonModule,
     TSIconModule,
     TSPirsmModule,
+    TSTabModule,
     RouterModule.forChild([
       { path: 'example', component: ExampleComponent },
     ])

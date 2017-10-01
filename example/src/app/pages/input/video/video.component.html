@@ -1,0 +1,38 @@
+<ts-tab [tabs]="['Demo','Info']" activeTab="Demo" [pads]="[Demo,Info]" color="dark" type="pills" position="right"></ts-tab>
+<br>
+<div class="card rounded-0" #Demo tab="Demo">
+    <div class="card-body">
+        <h4>Video Input</h4>
+        <hr>
+        <div class="pt-3 pb-3">
+            <ts-video btnClass="btn-secondary" src="http://ng.cool1024.com/mmd.mp4" (onChange)="video=$event"></ts-video>
+            <br>
+            <p class="bg-dark text-light p-2">{{video?'FileName : '+video.name:'please click open file button'}}</p>
+        </div>
+        <h4>Example Code</h4>
+        <hr>
+        <div class="pt-3 pb-3">
+            <p class="text-danger"><i class="fa fa-code fa-fw"></i>code in your tempelate *.html</p>
+            <ts-pirsm-code language="html" [code]="codes[0]"></ts-pirsm-code>
+        </div>
+    </div>
+</div>
+<div class="card rounded-0" #Info tab="Info">
+    <div class="card-body">
+        <h5>Selector</h5>
+        <hr>
+        <code>&lt;ts-video&gt;&lt;/ts-video&gt;</code>
+        <br><br>
+        <h5>Input</h5>
+        <hr>
+        <p>@Input() <span class="text-primary">src</span> : string;<span class="text-muted">//video source url,default:none</span></p>
+        <p>@Input() <span class="text-primary">title</span> : string;<span class="text-muted">//open button title,default:'OpenFile'</span></p>
+        <p>@Input() <span class="text-primary">btnClass</span> : string;<span class="text-muted">//open button class,default:'btn-outline-secondary'</span></p>
+        <p>@Input() <span class="text-primary">videoStyle</span> : {{"{[key:string]=>value:string}"}};<span class="text-muted">//video player window style,default:{{"{ 'width': '300px', 'height': '200px' }"}}</span></p>
+        <br>
+        <h5>Output</h5>
+        <hr>
+        <p>@Output() <span class="text-primary">onChange</span> : EventEmitter&lt;Blob&gt;//$event:video file</p>
+
+    </div>
+</div>

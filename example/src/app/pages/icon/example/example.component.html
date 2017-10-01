@@ -1,4 +1,6 @@
-<div class="card rounded-0">
+<ts-tab class="text-right" [tabs]="['Demo','Info']" activeTab="Demo" [pads]="[Demo,Info]" position="right" type="pills" color="dark"></ts-tab>
+<br>
+<div class="card rounded-0" #Demo tab="Demo">
     <div class="card-body">
         <h4>Example Icon<span class="pull-right"><i class="fa fa-eye"></i></span></h4>
         <hr>
@@ -27,3 +29,9 @@
             <ts-pirsm-code language="html" [code]="codes[1]"></ts-pirsm-code>
         </div>
     </div>
+</div>
+<div class="card rounded-0" #Info tab="Info">
+    <div class="card-body">
+
+    </div>
+</div>

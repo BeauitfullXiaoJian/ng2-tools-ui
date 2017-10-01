@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { InputTextComponent } from './../components/input-text/input-text.component';
+import { InputVideoComponent } from './../components/input-video/input-video.component';
 
 
 
@@ -11,9 +12,11 @@ import { InputTextComponent } from './../components/input-text/input-text.compon
   ],
   declarations: [
     InputTextComponent,
+    InputVideoComponent,
   ],
   exports: [
     InputTextComponent,
+    InputVideoComponent,
   ]
 })
 export class InputModule { }

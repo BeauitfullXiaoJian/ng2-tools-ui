@@ -1,6 +1,8 @@
-<div class="card rounded-0">
+<ts-tab class="text-right" [tabs]="['Demo','Info']" activeTab="Demo" [pads]="[Demo,Info]" position="right" type="pills" color="dark"></ts-tab>
+<br>
+<div class="card rounded-0" #Demo tab="Demo">
     <div class="card-body">
-        <h4>Example Tab<span class="pull-right"><i class="fa fa-eye"></i></span></h4>
+        <h4>Example Tab<span class="pull-right"></span></h4>
         <hr>
         <div class="pt-3 pb-3">
             <p>Show a tab</p>
@@ -8,7 +10,7 @@
             <p class="text-danger mt-2"><i class="fa fa-code fa-fw"></i>code in your page *.html/template</p>
             <ts-pirsm-code language="html" [code]="codes[0]"></ts-pirsm-code>
             <br>
-            <p>Use tab change pad</p>
+            <p>Use tab change pad (ngIf)</p>
             <ts-tab [tabs]="['First','Second','Third']" [activeTab]="activeTab" (tabChange)="activeTab=$event"></ts-tab>
             <div *ngIf="activeTab==='First'">
                 Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater
@@ -29,5 +31,82 @@
             <ts-pirsm-code language="html" [code]="codes[1]"></ts-pirsm-code>
             <p class="text-danger mt-2"><i class="fa fa-code fa-fw"></i>code in your component *.component.ts</p>
             <ts-pirsm-code language="typescript" [code]="codes[2]"></ts-pirsm-code>
+            <br>
+            <p>Use tab change pad (only dom)</p>
+            <ts-tab [tabs]="['First','Second','Third']" activeTab="First" [pads]="[tabPadFirst,tabPadSecond,tabPadThird]"></ts-tab>
+            <div #tabPadFirst tab='First'>
+                Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth. Cosby sweater
+                eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.
+            </div>
+            <div #tabPadSecond tab='Second'>
+                Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress, commodo
+                enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny pack
+                odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.
+            </div>
+            <div #tabPadThird tab='Third'>
+                Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia banksy
+                hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't heard
+                of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.
+            </div>
+            <br>
+            <p class="text-danger mt-2"><i class="fa fa-code fa-fw"></i>code in your page *.html/template</p>
+            <ts-pirsm-code language="html" [code]="codes[3]"></ts-pirsm-code>
         </div>
     </div>
+</div>
+<div class="card rounded-0" #Info tab="Info">
+    <div class="card-body">
+        <h5>Selector</h5>
+        <hr>
+        <code>&lt;ts-tab&gt;&lt;/ts-tab&gt;</code>
+        <br><br>
+        <h5>Input</h5>
+        <hr>
+        <p>@Input() <span class="text-primary">tabs</span> : Array&lt;string&gt;<span class="text-muted">//the tab list title array</span></p>
+        <ts-pirsm-code language='html' [code]='codes[4]'></ts-pirsm-code>
+        <ts-tab [tabs]="['a','b','c','d']"></ts-tab>
+        <br>
+
+        <p>@Input() <span class="text-primary">activeTab</span> : string<span class="text-muted">//the active tab title</span></p>
+        <ts-pirsm-code language='html' [code]='codes[5]'></ts-pirsm-code>
+        <ts-tab [tabs]="['a','b','c','d']" activeTab='b'></ts-tab>
+        <br>
+
+        <p>@Input() <span class="text-primary">position</span> : string<span class="text-muted">//tab position(left,center,right or end),default value : left</span></p>
+        <ts-pirsm-code language='html' [code]='codes[6]'></ts-pirsm-code>
+        <ts-tab [tabs]="['a','b','c','d']" activeTab='b' position="center"></ts-tab>
+        <br>
+
+        <p>@Input() <span class="text-primary">type</span> : string<span class="text-muted">//tab style(tabs,pills),default value : tabs</span></p>
+        <ts-pirsm-code language='html' [code]='codes[7]'></ts-pirsm-code>
+        <ts-tab [tabs]="['a','b','c','d']" activeTab='a' type="pills"></ts-tab>
+        <br>
+
+        <p> @Input() <span class="text-primary">color</span> : string<span class="text-muted">//tab color(primary,success...),active on type = 'pills', default value : primary</span></p>
+        <ts-pirsm-code language='html' [code]='codes[8]'></ts-pirsm-code>
+        <ts-tab [tabs]="['a','b','c','d']" activeTab='a' type="pills" color="danger"></ts-tab>
+        <br>
+        <ts-tab #colorTabs [tabs]="['primary','secondary','success','warning','dark']" activeTab='primary' type="pills" (tabChange)="colorTabs.color=$event"></ts-tab>
+
+        <br>
+
+        <p>@Input() <span class="text-primary">pads</span> : Array&lt;any&gt;<span class="text-muted">//the tab window list</span></p>
+        <ts-pirsm-code language='html' [code]='codes[9]'></ts-pirsm-code>
+        <ts-tab [tabs]="['a','b','c']" activeTab='a' [pads]=[pa,pb,pc]></ts-tab>
+        <div #pa tab="a"> Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.
+            Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</div>
+        <div #pb tab="b">Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin coffee squid. Exercitation +1 labore velit, blog sartorial PBR leggings next level wes anderson artisan four loko farm-to-table craft beer twee. Qui photo booth letterpress,
+            commodo enim craft beer mlkshk aliquip jean shorts ullamco ad vinyl cillum PBR. Homo nostrud organic, assumenda labore aesthetic magna delectus mollit. Keytar helvetica VHS salvia yr, vero magna velit sapiente labore stumptown. Vegan fanny
+            pack odio cillum wes anderson 8-bit, sustainable jean shorts beard ut DIY ethical culpa terry richardson biodiesel. Art party scenester stumptown, tumblr butcher vero sint qui sapiente accusamus tattooed echo park.</div>
+        <div #pc tab="c">Etsy mixtape wayfarers, ethical wes anderson tofu before they sold out mcsweeney's organic lomo retro fanny pack lo-fi farm-to-table readymade. Messenger bag gentrify pitchfork tattooed craft beer, iphone skateboard locavore carles etsy salvia
+            banksy hoodie helvetica. DIY synth PBR banksy irony. Leggings gentrify squid 8-bit cred pitchfork. Williamsburg banh mi whatever gluten-free, carles pitchfork biodiesel fixie etsy retro mlkshk vice blog. Scenester cred you probably haven't
+            heard of them, vinyl craft beer blog stumptown. Pitchfork sustainable tofu synth chambray yr.</div>
+        <br>
+        <h5>Output</h5>
+        <hr>
+        <p>@Output() <span class="text-primary">tabChange</span> : EventEmitter&lt;string&gt;//$event:the acitve tab title</p>
+        <ts-tab [tabs]="['a','b','c','d']" (tabChange)="testEvent=$event"></ts-tab>
+        <p>{{testEvent||'please click a tab title'}}</p>
+        <ts-pirsm-code language='html' [code]='codes[10]'></ts-pirsm-code>
+    </div>
+</div>
