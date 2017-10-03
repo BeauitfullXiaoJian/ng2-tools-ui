@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { TSIconModule } from './tools-ui';
+import { TSIconModule, TSOssModule } from './tools-ui';
 
 @NgModule({
   declarations: [
@@ -11,6 +11,7 @@ import { TSIconModule } from './tools-ui';
   imports: [
     BrowserModule,
     TSIconModule,
+    TSOssModule.forRoot(),
     RouterModule.forRoot([
       { path: 'loading', loadChildren: 'app/pages/loading/loading.module#LoadingModule' },
       { path: 'code', loadChildren: 'app/pages/code/code.module#CodeModule' },
