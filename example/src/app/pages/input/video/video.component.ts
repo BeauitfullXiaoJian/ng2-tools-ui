@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { UploadResult, TSUploadResult, VideoConfig, TSOssService, OSSUploadDatas, UploadingProgress } from './../../../tools-ui';
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/observable/of';;
 
 @Component({
   templateUrl: './video.component.html',
@@ -41,7 +40,8 @@ export class VideoComponent {
   codes = [
     ` <ts-video btnClass="btn-secondary" src="http://ng.cool1024.com/mmd.mp4" (onChange)="video=$event" [config]="config"></ts-video>
    <p class="bg-dark text-light p-2">{{video?'FileName : '+video.name:'please click open file button'}}</p>`,
-    `config: VideoConfig = {
+    `video: File
+  config: VideoConfig = {
       useUploader: true, 
       uploaderTitle: 'Upload',
       uploader: new Observable<UploadResult>(obs => {...})

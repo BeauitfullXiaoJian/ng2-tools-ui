@@ -5,6 +5,7 @@ import { TSPirsmModule, TSInputModule, TSTabModule } from './../../tools-ui';
 
 import { TextComponent } from './text/text.component';
 import { VideoComponent } from './video/video.component';
+import { ImageComponent } from './image/image.component';
 
 
 @NgModule({
@@ -16,11 +17,13 @@ import { VideoComponent } from './video/video.component';
     RouterModule.forChild([
       { path: 'text', component: TextComponent },
       { path: 'video', component: VideoComponent },
+      { path: 'image', component: ImageComponent },
     ])
   ],
   declarations: [
     TextComponent,
     VideoComponent,
+    ImageComponent,
   ]
 })
 export class InputModule { }

@@ -21,7 +21,7 @@ export class InputVideoComponent implements OnChanges {
 
   @Input() config: VideoConfig
 
-  @Output() onChange: EventEmitter<File> = new EventEmitter<File>()
+  @Output() onChange = new EventEmitter<File>()
 
   showVideo = false
 
@@ -52,7 +52,7 @@ export class InputVideoComponent implements OnChanges {
       this.showVideo = true
       this.hasUpload = false
       this.showLoading = false
-      if (this.config.auto === true) {
+      if (!!this.config && this.config.auto === true) {
         this.tryUpload()
       }
     }

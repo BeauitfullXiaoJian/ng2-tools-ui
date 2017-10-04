@@ -1,13 +1,36 @@
-<div class="card rounded-0">
-  <div class="card-body">
-    <h4>Example<span class="pull-right"><i class="fa fa-eye"></i></span></h4>
-    <hr>
-    <div class="pt-3 pb-3">
-      <p class="text-muted mt-2"><i class="fa fa-code fa-fw"></i>code in your page *.html/template</p>
-      <ts-pirsm-code [language]="language.html" [code]="codes[0]"></ts-pirsm-code>
-      <p class="text-muted"><i class="fa fa-code fa-fw"></i>code in your page *.component.ts</p>
-      <ts-pirsm-code [language]="language.typescript" [code]="codes[1]"></ts-pirsm-code>
-      <p class="text-muted"><i class="fa fa-code fa-fw"></i>you will see</p>
-      <ts-pirsm-code [language]="language.html" [code]="codes[2]"></ts-pirsm-code>
+<ts-tab [tabs]="['Demo','Info']" activeTab="Demo" [pads]="[Demo,Info]" color="dark" type="pills" position="right"></ts-tab>
+<br>
+<div #Demo tab="Demo" class="card rounded-0">
+    <div class="card-body">
+        <h4>Example</h4>
+        <hr>
+        <div class="pt-3 pb-3">
+            <p class="text-muted mt-2"><i class="fa fa-code fa-fw"></i>code in your page *.html/template</p>
+            <ts-pirsm-code [language]="language.html" [code]="codes[0]"></ts-pirsm-code>
+            <p class="text-muted"><i class="fa fa-code fa-fw"></i>code in your page *.component.ts</p>
+            <ts-pirsm-code [language]="language.typescript" [code]="codes[1]"></ts-pirsm-code>
+            <p class="text-muted"><i class="fa fa-code fa-fw"></i>you will see</p>
+            <ts-pirsm-code [language]="language.html" [code]="codes[2]"></ts-pirsm-code>
+        </div>
     </div>
-  </div>
+</div>
+<div #Info tab="Info" class="card rounded-0">
+    <div class="card-body">
+        <h5>Selector</h5>
+        <hr>
+        <div class="pt-3 pb-3">
+            <code>&lt;ts-pirsm-code&gt;&lt;/ts-pirsm-code&gt;</code>
+        </div>
+        <h5>Input</h5>
+        <hr>
+        <div class="pt-3 pb-3">
+            <pre>
+//default value : 'html' (other:'typescript','javascript','xml','php')
+@Input() language: string
+
+//your code
+@Input() code: string
+            </pre>
+        </div>
+    </div>
+</div>

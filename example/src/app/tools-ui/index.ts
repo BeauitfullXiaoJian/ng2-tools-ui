@@ -13,10 +13,11 @@ export { CODE_LANGUAGE } from './components/pirsm-code/pirsm-code.component';
 /*tool interfaces*/
 export { UploadResult, UploadingProgress } from './interfaces/upload-result.interface';
 export { VideoConfig } from './interfaces/video-config.interface';
+export { ImageConfig } from './interfaces/image-config.interface';
 export { OSSUploadDatas } from './interfaces/oss-params.interface';
 
 /*tool classes*/
-export { TSUploadResult, TSUploadingProgress } from './classes/upload.class';
+export { TSUploadResult, TSUploadingProgress, TSInputImages } from './classes/upload.class';
 
 /*tool services*/
 export { OssService as TSOssService } from './services/oss.service';

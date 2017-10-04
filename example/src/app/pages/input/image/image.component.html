@@ -1,0 +1,80 @@
+<ts-tab [tabs]="['Demo','Info']" activeTab="Demo" [pads]="[Demo,Info]" color="dark" type="pills" position="right"></ts-tab>
+<br>
+<div class="card rounded-0" #Demo tab="Demo">
+    <div class="card-body">
+        <h4>Image Input</h4>
+        <hr>
+        <div class="pt-3 pb-3">
+            <ts-image src="http://www.hello1024.top/flat-ui/img/box-image/9.jpg" (onChange)="image=$event.file"></ts-image>
+        </div>
+        <div class="pt-3 pb-3">
+            <p class="text-danger"><i class="fa fa-code fa-fw"></i>code in your tempelate *.html</p>
+            <ts-pirsm-code language="html" [code]="codes[0]"></ts-pirsm-code>
+            <p class="text-danger"><i class="fa fa-code fa-fw"></i>code in your component *.component.ts</p>
+            <ts-pirsm-code language="typescript" [code]="codes[1]"></ts-pirsm-code>
+        </div>
+        <h4>Images Input</h4>
+        <hr>
+        <div class="pt-3 pb-3">
+            <ts-images src="http://www.hello1024.top/flat-ui/img/box-image/1.jpg,http://www.hello1024.top/flat-ui/img/box-image/2.jpg,http://www.hello1024.top/flat-ui/img/box-image/3.jpg" (onChange)="images=$event"></ts-images>
+        </div>
+        <div class="pt-3 pb-3">
+            <p class="text-danger"><i class="fa fa-code fa-fw"></i>code in your tempelate *.html</p>
+            <ts-pirsm-code language="html" [code]="codes[2]"></ts-pirsm-code>
+            <p class="text-danger"><i class="fa fa-code fa-fw"></i>code in your component *.component.ts</p>
+            <ts-pirsm-code language="typescript" [code]="codes[3]"></ts-pirsm-code>
+        </div>
+    </div>
+</div>
+<div class="card rounded-0" #Info tab="Info">
+    <div class="card-body">
+        <h5>Selector</h5>
+        <hr>
+        <code>&lt;ts-image&gt;&lt;/ts-image&gt;</code>
+        <br>
+        <br>
+        <h5>Input</h5>
+        <hr>
+        <pre>
+@Input() config: ImageConfig
+@Input() src: string | SafeResourceUrl
+@Input() openBtnClassName: string
+@Input() uploadBtnClassName: string
+@Input() removeBtnClassName: string
+@Input() resetBtnClassName: string
+@Input() openTitle: string
+@Input() imageStyle: {{"{[key:string]:string}"}}
+        </pre>
+        <h5>Output</h5>
+        <hr>
+        <pre>
+@Output() onChange : EventEmitter&lt;{{"{ file: File, image: string | SafeResourceUrl }"}}&gt;               
+        </pre>
+        <h5>Interface</h5>
+        <hr>
+        <ts-pirsm-code language="typescript" [code]="codes[4]"></ts-pirsm-code>
+        <h5>Selector</h5>
+        <hr>
+        <code>&lt;ts-images&gt;&lt;/ts-images&gt;</code>
+        <br>
+        <br>
+        <h5>Input</h5>
+        <hr>
+        <pre>
+@Input() src: string
+@Input() openBtnClassName: string
+@Input() resetBtnClassName: string
+@Input() openTitle: string
+@Input() resetTitle: string
+@Input() imageStyle: {{"{[key:string]:string}"}}
+        </pre>
+        <h5>Output</h5>
+        <hr>
+        <pre>
+@Output() onChange : EventEmitter&lt;TSInputImages&gt;()
+        </pre>
+        <h5>Class</h5>
+        <hr>
+        <ts-pirsm-code language="typescript" [code]="codes[5]"></ts-pirsm-code>
+    </div>
+</div>
