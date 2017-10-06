@@ -1,0 +1,53 @@
+<ts-tab [tabs]="['Demo','Info']" activeTab="Demo" [pads]="[Demo,Info]" color="dark" type="pills" position="right"></ts-tab>
+<br>
+<div class="card rounded-0" #Demo tab="Demo">
+    <div class="card-body">
+        <h4>File Input</h4>
+        <hr>
+        <div class="pt-3 pb-3">
+            <div class="input-group">
+                <input name="file" #tsFile='tsFile' ts-file class="form-control" placeholder="No file selected" (onChange)="file=$event" type="text">
+                <span class="input-group-btn">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                        <button (click)="tsFile.openFileDialog()" class="btn btn-dark" type="button"><ts-icon name="folder-o" size="lg"></ts-icon>Open File</button>
+                        <button (click)="tsFile.removeFile()" class="btn btn-danger"><ts-icon name="trash-o" size="lg"></ts-icon></button>
+                      </div>
+                </span>
+            </div>
+            <br>
+            <pre *ngIf="!!file" class="text-primary">
+FileName : {{file.name}}
+FileSize : {{file.size}}
+FileType : {{file.type||'unknown'}}
+FileDate : {{file.lastModifiedDate}}
+            </pre>
+            <p class="text-danger"><i class="fa fa-code fa-fw"></i>code in your tempelate *.html</p>
+            <ts-pirsm-code [code]="codes[0]"></ts-pirsm-code>
+            <p class="text-danger"><i class="fa fa-code fa-fw"></i>code in your component *.component.ts</p>
+            <ts-pirsm-code language="typescript" [code]="codes[1]"></ts-pirsm-code>
+        </div>
+    </div>
+</div>
+<div class="card rounded-0" #Info tab="Info">
+    <div class="card-body">
+        <h5>Selector</h5>
+        <hr>
+        <code>input[ts-file]</code>
+        <br>
+        <br>
+        <h5>ExportAs</h5>
+        <hr>
+        <code>tsFile</code>
+        <br>
+        <br>
+        <h5>Output</h5>
+        <hr>
+        <code>@Output() onChange : EventEmitter&lt;File&gt;()</code>
+        <br>
+        <br>
+        <h5>Method</h5>
+        <hr>
+        <p>openFileDialog()<span class="text-muted"> //open the file dialog</span></p>
+        <p>removeFile()<span class="text-muted"> //remove all file</span></p>
+    </div>
+</div>

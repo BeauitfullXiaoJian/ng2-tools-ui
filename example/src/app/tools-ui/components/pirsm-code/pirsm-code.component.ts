@@ -33,9 +33,9 @@ export class PirsmCodeComponent implements OnChanges {
 
   ngOnChanges(changes: SimpleChanges) {
 
-    const language = changes.language.currentValue
+    const language = changes.language ? changes.language.currentValue : 'html'
 
-    const html: string = Prism.highlight(this.code || '', LANGUAGE[language || 'html'])
+    const html: string = Prism.highlight(this.code || '', LANGUAGE[language])
 
     this.codePad.nativeElement.innerHTML = html
 
