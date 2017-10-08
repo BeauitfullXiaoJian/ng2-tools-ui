@@ -27,7 +27,7 @@ export class InputFileComponent {
     this.onChange.emit(null)
   }
 
-  private fileChanged(files: File[]) {
+  fileChanged(files: File[]) {
     if (files.length > 0) {
       this.elementRef.nativeElement.value = files[0].name
       this.onChange.emit(files[0])
