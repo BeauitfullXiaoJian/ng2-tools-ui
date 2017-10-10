@@ -1,6 +1,6 @@
 <div #pad class="modal fade" (click)="tryClose($event)" [ngClass]="{'show': show}" [ngStyle]="{'display': show?'block':'none'}"
     tabindex="-1" role="dialog">
-    <div class="modal-dialog" role="document">
+    <div class="modal-dialog modal-{{size}}" role="document">
         <div class="modal-content">
             <ng-template ts-modal-host></ng-template>
         </div>

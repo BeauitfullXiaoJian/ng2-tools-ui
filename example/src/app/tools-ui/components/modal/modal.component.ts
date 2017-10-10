@@ -13,8 +13,11 @@ export class ModalComponent {
 
   show: boolean
 
+  size: string
+
   constructor(private componentFactoryResolver: ComponentFactoryResolver) {
     this.show = false
+    this.size = ''
   }
 
   loadComponent(content: any): ComponentRef<any> {

@@ -1,2 +1,70 @@
-<button type="button" class="btn btn-primary" (click)=openModal();>Open Modal</button>
-<!-- <ts-modal></ts-modal> -->
+<ts-tab class="text-right" [tabs]="['Demo','Info']" activeTab="Demo" [pads]="[Demo,Info]" position="right" type="pills" color="dark"></ts-tab>
+<br>
+<div class="card rounded-0" #Demo tab="Demo">
+    <div class="card-body">
+        <h4>Simple Modal<span class="pull-right"></span></h4>
+        <hr>
+        <div class="pt-3 pb-3">
+            <button type="button" class="btn" (click)="openSimpleModal('sm')">Small Modal</button>
+            <button type="button" class="btn btn-secondary" (click)="openSimpleModal('md')">Middle Modal</button>
+            <button type="button" class="btn btn-dark" (click)="openSimpleModal('lg')">Large Modal</button>
+        </div>
+        <p>create a modal componet</p>
+        <ts-pirsm-code language="typescript" [code]="codes[0]"></ts-pirsm-code>
+        <p>code in your page template html</p>
+        <ts-pirsm-code language="html" [code]="codes[1]"></ts-pirsm-code>
+        <p>code in your page component ts</p>
+        <ts-pirsm-code language="typescript" [code]="codes[2]"></ts-pirsm-code>
+        <p>add modal component in your module entryComponents</p>
+        <ts-pirsm-code language="typescript" [code]="codes[3]"></ts-pirsm-code>
+        <h4>Input Modal<span class="pull-right"></span></h4>
+        <hr>
+        <div class="pt-3 pb-3">
+            <button type="button" class="btn btn-info" (click)="openInputModal('sm')">Input Modal</button>
+            <div class="pt-2">
+                <pre>{{message | json}}</pre>
+            </div>
+        </div>
+        <p>create a modal componet</p>
+        <ts-pirsm-code language="typescript" [code]="codes[4]"></ts-pirsm-code>
+        <p>code in your page template html</p>
+        <ts-pirsm-code language="html" [code]="codes[5]"></ts-pirsm-code>
+        <p>code in your page component ts</p>
+        <ts-pirsm-code language="typescript" [code]="codes[6]"></ts-pirsm-code>
+        <p>add modal component in your module entryComponents</p>
+        <ts-pirsm-code language="typescript" [code]="codes[7]"></ts-pirsm-code>
+    </div>
+</div>
+<div class="card rounded-0" #Info tab="Info">
+    <div class="card-body">
+        <h5>Service</h5>
+        <hr>
+        <p><code>import{{"{ TSModalService }"}} from 'tools-ui'</code></p>
+        <h5>Method</h5>
+        <hr>
+        <pre>
+<span class="text-muted">//create a modal</span>
+create(content: any, options?: {{"{ size: string }"}}):TSModalService
+
+<span class="text-muted">//open the modal</span>
+open():Task
+            
+<span class="text-muted">//close modal with some datas</span>
+close(params?: any):void 
+
+<span class="text-muted">//just close modal</span>
+dismiss():void 
+        </pre>
+        <h5>Example</h5>
+        <hr>
+        <ts-tab [tabs]="['my-modal.component.ts','test.component.ts']" activeTab="my-modal.component.ts" [pads]="[Modal,Page]"></ts-tab>
+        <div #Modal tab="my-modal.component.ts">
+            <!-- <p class="text-danger">create a modal component : my-modal.component.ts</p> -->
+            <ts-pirsm-code language="typescript" [code]="codes[8]" [codeStyle]="{'background-color':'white'}"></ts-pirsm-code>
+        </div>
+        <div #Page tab="test.component.ts">
+            <!-- <p class="text-danger">create a test page component : test.component.ts</p> -->
+            <ts-pirsm-code language="typescript" [code]="codes[9]" [codeStyle]="{'background-color':'white'}"></ts-pirsm-code>
+        </div>
+    </div>
+</div>

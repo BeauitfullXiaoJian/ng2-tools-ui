@@ -22,4 +22,5 @@ export { TSUploadResult, TSUploadingProgress, TSInputImages } from './classes/up
 
 /*tool services*/
 export { OssService as TSOssService } from './services/oss.service';
+export { DataService as TSDataService } from './services/data.service';
 export { ModalService as TSModalService } from './components/modal/modal.service';

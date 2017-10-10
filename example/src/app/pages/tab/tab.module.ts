@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { TSPirsmModule, TSTabModule, TSModalModule } from './../../tools-ui';
 import { ExampleComponent } from './example/example.component';
 import { ModalComponent } from './modal/modal.component';
+import { SimpleModalComponent } from './modal/simple-modal.component';
 import { TestModalComponent } from './modal/test-modal.component';
 
 @NgModule({
@@ -23,9 +24,11 @@ import { TestModalComponent } from './modal/test-modal.component';
     ExampleComponent,
     ModalComponent,
     TestModalComponent,
+    SimpleModalComponent,
   ],
   entryComponents: [
     TestModalComponent,
+    SimpleModalComponent,
   ]
 })
 export class TabModule { }

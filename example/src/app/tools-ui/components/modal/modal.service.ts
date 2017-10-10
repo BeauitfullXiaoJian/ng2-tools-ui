@@ -22,9 +22,12 @@ export class ModalService {
         this.task = new Task(handle => this.handel = handle)
     }
 
-    create(content: any) {
+    create(content: any, options?: { size: string }): ModalService {
         this.modalComponent = content
         this.modal = this.windowCmptRef.instance.loadComponent(content)
+        if (options !== undefined) {
+            this.windowCmptRef.instance.size = options.size || ''
+        }
         return this
     }
 
@@ -37,7 +40,7 @@ export class ModalService {
         this.windowCmptRef.instance.close()
     }
 
-    open() {
+    open(): Task {
         this.windowCmptRef.instance.open()
         return this.task
     }
