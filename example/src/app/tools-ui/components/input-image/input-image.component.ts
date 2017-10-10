@@ -57,7 +57,7 @@ export class InputImageComponent {
   resetInput(input: HTMLInputElement) {
     this.showImage = false
     this.isLoading = false
-    this.hasUpload = false
+    this.hasUpload = true
     input.value = ""
     this.src = this.default
     this.onChange.emit({ file: null, image: this.src })
@@ -67,7 +67,7 @@ export class InputImageComponent {
     this.src = ""
     this.showImage = false
     this.isLoading = false
-    this.hasUpload = false
+    this.hasUpload = true
     input.value = ""
     this.onChange.emit({ file: null, image: '' })
   }

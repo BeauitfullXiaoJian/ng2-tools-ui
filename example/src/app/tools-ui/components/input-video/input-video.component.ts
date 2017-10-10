@@ -61,7 +61,7 @@ export class InputVideoComponent implements OnChanges {
   cleanInput() {
     this.src = ""
     this.showVideo = false
-    this.hasUpload = false
+    this.hasUpload = true
     this.showLoading = false
     this.onChange.emit(null)
   }

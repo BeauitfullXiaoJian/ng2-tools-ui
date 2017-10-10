@@ -9,6 +9,7 @@ import { IconModule } from './modules/icon-component.module';
 import { TabPadModule } from './modules/tab-pad.module';
 import { DatePickerModule } from './modules/datepicker.module';
 import { ModalModule } from './modules/modal.module';
+import { CheckboxModule } from './modules/checkbox-component.module';
 
 @NgModule({
   imports: [
@@ -19,6 +20,7 @@ import { ModalModule } from './modules/modal.module';
     TabPadModule,
     DatePickerModule,
     ModalModule,
+    CheckboxModule,
   ],
   declarations: [],
   exports: [
@@ -28,6 +30,7 @@ import { ModalModule } from './modules/modal.module';
     DatePickerModule,
     TabPadModule,
     ModalModule,
+    CheckboxModule,
   ]
 })
 export class ToolsUiModule { }

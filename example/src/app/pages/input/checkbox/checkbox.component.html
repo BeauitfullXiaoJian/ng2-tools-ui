@@ -1,0 +1,31 @@
+<div class="card rounded-0">
+    <div class="card-body">
+        <div class="form-group">
+            <p>Type</p>
+            <hr>
+            <ts-checkbox [(checked)]="checkeds[0]"></ts-checkbox>
+            <ts-checkbox [(checked)]="checkeds[1]" type="square"></ts-checkbox>
+            <br>
+            <br>
+            <p>Label</p>
+            <hr>
+            <ts-checkbox [(checked)]="checkeds[2]" label="Apple"></ts-checkbox>
+            <br>
+            <br>
+            <p>Color</p>
+            <hr>
+            <ts-checkbox [(checked)]="checkeds[3]" color="primary" label="primary"></ts-checkbox>
+            <ts-checkbox [(checked)]="checkeds[4]" defaultColor="muted" activeColor="danger" label="checkbox" [ngClass]="{'text-muted':!checkeds[4],'text-danger':checkeds[4]}"></ts-checkbox>
+            <!-- <ts-checkbox [(checked)]="checked" activeColor="success" defaultColor="muted" label="Apple" [ngClass]="{'text-primary':checked}"></ts-checkbox> -->
+        </div>
+        <div class="form-group">
+            <p>Group</p>
+            <hr>
+            <ts-checkbox-group>
+                <ts-checkbox></ts-checkbox>
+                <ts-checkbox></ts-checkbox>
+                <ts-checkbox></ts-checkbox>
+            </ts-checkbox-group>
+        </div>
+    </div>
+</div>
