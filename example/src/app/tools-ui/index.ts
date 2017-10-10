@@ -6,6 +6,7 @@ export { IconModule as TSIconModule } from './modules/icon-component.module';
 export { TabPadModule as TSTabModule } from './modules/tab-pad.module';
 export { DatePickerModule as TSDateModule } from './modules/datepicker.module';
 export { OSSModule as TSOssModule } from './modules/oss.module';
+export { ModalModule as TSModalModule } from './modules/modal.module';
 
 
 /*const configs*/
@@ -22,3 +23,5 @@ export { TSUploadResult, TSUploadingProgress, TSInputImages } from './classes/up
 
 /*tool services*/
 export { OssService as TSOssService } from './services/oss.service';
+export { DataService as TSDataService } from './services/data.service';
+export { ModalService as TSModalService } from './components/modal/modal.service';

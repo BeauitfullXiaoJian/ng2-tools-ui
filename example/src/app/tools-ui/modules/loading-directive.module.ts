@@ -1,6 +1,5 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-
 import { BtnLoadingComponent } from './../directives/btn-loading.directive';
 import { ImgLoadingDirective } from './../directives/img-loading.directive';
 

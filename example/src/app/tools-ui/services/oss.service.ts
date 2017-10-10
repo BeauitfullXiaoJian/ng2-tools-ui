@@ -11,7 +11,7 @@ export class OssService {
 
     token(host: string, params: { [key: string]: string } = {}): Task {
         return new Task(handel => {
-            let request = new XMLHttpRequest()
+            const request = new XMLHttpRequest()
             request.onload = (response: any) => { handel.ready(response.target) }
             request.onerror = (error: any) => { console.error(error) }
             request.open('GET', host + UrlTool.parse(params))
@@ -21,8 +21,8 @@ export class OssService {
 
     upload(params: OSSUploadDatas): Task {
         return new Task(handel => {
-            let formData = new FormData()
-            let request = new XMLHttpRequest()
+            const formData = new FormData()
+            const request = new XMLHttpRequest()
             request.open('post', params.host)
             formData.append('name', params.name)
             formData.append('key', params.dir + '/${filename}')
@@ -31,7 +31,9 @@ export class OssService {
             formData.append('success_action_status', '200')
             formData.append('signature', params.signature)
             formData.append('file', params.file)
-            request.onload = (response: any) => { response.target.status === 200 ? handel.ready(new TSUploadingProgress(true, 100)) : handel.ready(new TSUploadingProgress(false, -1)) }
+            request.onload = (response: any) => {
+                response.target.status === 200 ? handel.ready(new TSUploadingProgress(true, 100)) : handel.ready(new TSUploadingProgress(false, -1))
+            }
             request.upload.onprogress = (event: any) => { handel.ready(new TSUploadingProgress(false, Math.round(event.loaded / event.total * 100))) }
             request.onerror = (error: any) => { console.error(error); handel.ready(new TSUploadingProgress(false, -1)) }
             request.send(formData)

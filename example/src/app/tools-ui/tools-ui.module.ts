@@ -8,6 +8,7 @@ import { InputModule } from './modules/input-component.module';
 import { IconModule } from './modules/icon-component.module';
 import { TabPadModule } from './modules/tab-pad.module';
 import { DatePickerModule } from './modules/datepicker.module';
+import { ModalModule } from './modules/modal.module';
 
 @NgModule({
   imports: [
@@ -17,6 +18,7 @@ import { DatePickerModule } from './modules/datepicker.module';
     InputModule,
     TabPadModule,
     DatePickerModule,
+    ModalModule,
   ],
   declarations: [],
   exports: [
@@ -24,6 +26,8 @@ import { DatePickerModule } from './modules/datepicker.module';
     LoadingModule,
     InputModule,
     DatePickerModule,
+    TabPadModule,
+    ModalModule,
   ]
 })
 export class ToolsUiModule { }

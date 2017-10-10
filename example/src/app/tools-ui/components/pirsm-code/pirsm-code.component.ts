@@ -27,6 +27,7 @@ export class PirsmCodeComponent implements OnChanges {
 
   @Input() language: string
   @Input() code: string
+  @Input() codeStyle: { [key: string]: string }
   @ViewChild('pad') codePad: any
 
   constructor() { }

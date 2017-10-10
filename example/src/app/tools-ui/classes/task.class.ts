@@ -28,7 +28,7 @@ export class TaskQuery {
     push(task) { this.taskQuery.push(task) }
     run() {
         this.taskCx = 0
-        for (var i = 0; i < this.taskQuery.length; i++) {
+        for (let i = 0; i < this.taskQuery.length; i++) {
             this.params.push(null)
         }
         this.do()
