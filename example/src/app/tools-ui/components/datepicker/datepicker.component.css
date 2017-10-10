@@ -1,0 +1,9 @@
+.ts-day {
+    min-width: 50px;
+    line-height: 30px;
+}
+
+th {
+    font-weight: normal;
+    font-family: Microsoft YaiHei, 微软雅黑, KaiTi;
+}

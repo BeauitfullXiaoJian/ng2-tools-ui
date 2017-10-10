@@ -1,0 +1,9 @@
+<div class="card rounded-0">
+    <div class="card-body">
+        <div class="form-group">
+            <label class="form-label">Number</label>
+            <input name="text" #number="ngModel" [ngModel]="number" type="number" [pattern]="regExp" required class="form-control">
+            <p class="text-danger" *ngIf="number.invalid&&number.dirty">your input is invalid</p>
+        </div>
+    </div>
+</div>

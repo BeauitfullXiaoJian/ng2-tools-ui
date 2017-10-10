@@ -4,6 +4,7 @@ export { LoadingModule as TSLoadingModule } from './modules/loading-directive.mo
 export { InputModule as TSInputModule } from './modules/input-component.module';
 export { IconModule as TSIconModule } from './modules/icon-component.module';
 export { TabPadModule as TSTabModule } from './modules/tab-pad.module';
+export { DatePickerModule as TSDateModule } from './modules/datepicker.module';
 export { OSSModule as TSOssModule } from './modules/oss.module';
 
 

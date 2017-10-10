@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
-import { TSIconModule, TSOssModule } from './tools-ui';
+import { TSOssModule } from './tools-ui';
 
 @NgModule({
   declarations: [
@@ -10,7 +10,6 @@ import { TSIconModule, TSOssModule } from './tools-ui';
   ],
   imports: [
     BrowserModule,
-    TSIconModule,
     TSOssModule.forRoot(),
     RouterModule.forRoot([
       { path: 'loading', loadChildren: 'app/pages/loading/loading.module#LoadingModule' },
@@ -18,6 +17,7 @@ import { TSIconModule, TSOssModule } from './tools-ui';
       { path: 'input', loadChildren: 'app/pages/input/input.module#InputModule' },
       { path: 'icon', loadChildren: 'app/pages/icon/icon.module#IconModule' },
       { path: 'tab', loadChildren: 'app/pages/tab/tab.module#TabModule' },
+      { path: 'datepicker', loadChildren: 'app/pages/datepicker/datepicker.module#DatepickerModule' },      
     ])
   ],
   providers: [],

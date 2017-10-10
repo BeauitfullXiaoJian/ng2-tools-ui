@@ -1,0 +1,12 @@
+<div class="card">
+    <table>
+        <thead>
+            <th class="text-right" *ngFor="let title of weekTitles">{{title}}</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let tr of trList">
+                <td class="ts-day text-right" *ngFor="let td of tr">{{td}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
