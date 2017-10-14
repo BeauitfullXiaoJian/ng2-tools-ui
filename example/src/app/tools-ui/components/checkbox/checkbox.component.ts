@@ -21,10 +21,13 @@ export class CheckboxComponent implements OnChanges {
   }
 
   ngOnChanges(simpleChanges: SimpleChanges) {
-    this.checked = simpleChanges.checked.currentValue
+
+    if(!!simpleChanges.checked){
+      this.checked = simpleChanges.checked.currentValue
+    }
+
     if (!!simpleChanges.color) {
       this.activeColor = this.defaultColor = this.color = simpleChanges.color.currentValue
-      console.log(this.activeColor)
     }
   }
 

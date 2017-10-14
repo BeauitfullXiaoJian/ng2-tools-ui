@@ -21,10 +21,51 @@
         <div class="form-group">
             <p>Group</p>
             <hr>
-            <ts-checkbox-group>
-                <ts-checkbox></ts-checkbox>
-                <ts-checkbox></ts-checkbox>
-                <ts-checkbox></ts-checkbox>
+            <ts-checkbox-group [(values)]="values">
+                <ts-checkbox value="A" label="A"></ts-checkbox>
+                <ts-checkbox value="B" label="B"></ts-checkbox>
+                <ts-checkbox value="C" label="C"></ts-checkbox>
+            </ts-checkbox-group>
+            <p>{{values.join()}}</p>
+            <ts-checkbox-group [(values)]="values">
+                <div class="row">
+                    <div class="col-sm-3">
+                        <div class="card rounded-0">
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <ts-checkbox value="Apple"></ts-checkbox>Card A</h4>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card rounded-0">
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <ts-checkbox value="Bananer"></ts-checkbox>Card B</h4>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card rounded-0">
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <ts-checkbox value="Computer"></ts-checkbox>Card C</h4>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3">
+                        <div class="card rounded-0">
+                            <div class="card-body">
+                                <h4 class="card-title">
+                                    <ts-checkbox value="Dog"></ts-checkbox>Card D</h4>
+                                <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </ts-checkbox-group>
         </div>
     </div>

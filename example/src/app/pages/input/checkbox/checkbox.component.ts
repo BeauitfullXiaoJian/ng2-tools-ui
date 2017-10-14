@@ -9,6 +9,8 @@ export class CheckboxComponent implements OnInit {
 
   checkeds = [true, true, true, true, true, true, true, true, true, true, true,]
 
+  values = []
+
   constructor() { }
 
   ngOnInit() { }
