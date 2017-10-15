@@ -123,7 +123,7 @@ export class InputModalComponent {
     }
 }`,
         `
-<button type="button" class="btn btn-info" (click)="openInputModal('sm')">Input Modal</button>
+<button type="button" class="btn btn-info" (click)="openInputModal()">Input Modal</button>
 <div class="pt-2"><pre>{{message | json}}</pre></div>`,
         `
 import { TSModalService, TSDataService } from '<path>/tools-ui';

@@ -10,6 +10,7 @@ import { TabPadModule } from './modules/tab-pad.module';
 import { DatePickerModule } from './modules/datepicker.module';
 import { ModalModule } from './modules/modal.module';
 import { CheckboxModule } from './modules/checkbox-component.module';
+import { PaginationComponent } from './components/pagination/pagination.component';
 
 @NgModule({
   imports: [
@@ -22,7 +23,7 @@ import { CheckboxModule } from './modules/checkbox-component.module';
     ModalModule,
     CheckboxModule,
   ],
-  declarations: [],
+  declarations: [PaginationComponent],
   exports: [
     PirsmCodeModule,
     LoadingModule,
