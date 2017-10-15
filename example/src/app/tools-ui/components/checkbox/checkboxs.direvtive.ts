@@ -1,4 +1,4 @@
-import { Directive, Input, Output, EventEmitter, QueryList, ContentChildren, forwardRef } from '@angular/core';
+import { Directive, Input, Output, EventEmitter, QueryList, ContentChildren, forwardRef, AfterContentInit } from '@angular/core';
 import { CheckboxComponent } from './checkbox.component';
 @Directive({
   selector: 'ts-checkbox-group',
@@ -7,7 +7,7 @@ import { CheckboxComponent } from './checkbox.component';
     '(click)': 'getGroupValue()'
   },
 })
-export class CheckboxsComponent {
+export class CheckboxsDirective implements AfterContentInit {
 
   @Input() values: Array<any>
   @Output() valuesChange = new EventEmitter<any>()
@@ -15,25 +15,19 @@ export class CheckboxsComponent {
 
   constructor() { }
 
-  ngDoCheck() {
-
-    // if (!!simpleChanges.values) {
-    console.log(this.checkboxList)
-    // const defaultValues = this.getDefaultValues()
-    // this.values = simpleChanges.checked.currentValue
-    // this.values.forEach(value => {
-    //   let i = defaultValues.indexOf(value)
-    //   if (i >= 0) {
-    //     this.checkboxList[i].checked = true
-    //   }
-    // })
-    // }
-
+  ngAfterContentInit() {
+    const defaultValues = this.getDefaultValues()
+    this.values.forEach(value => {
+      const checkboxList = this.checkboxList.toArray()
+      let i = defaultValues.indexOf(value)
+      if (i >= 0) {
+        checkboxList[i].checked = true
+      }
+    })
   }
 
   getGroupValue() {
     this.values = []
-    let checkboxList = this.checkboxList.toArray()
     this.checkboxList.forEach(checkbox => {
       if (checkbox.checked === true) {
         this.values.push(checkbox.value)

@@ -1,39 +1,36 @@
-<div class="card rounded-0">
+<ts-tab [tabs]="['Demo','Info']" activeTab="Info" [pads]="[Demo,Info]" color="dark" type="pills" position="right"></ts-tab>
+<br>
+<div #Demo tab="Demo" class="card rounded-0">
     <div class="card-body">
         <div class="form-group">
-            <p>Type</p>
+            <p>Checkbox Type</p>
             <hr>
             <ts-checkbox [(checked)]="checkeds[0]"></ts-checkbox>
             <ts-checkbox [(checked)]="checkeds[1]" type="square"></ts-checkbox>
+            <ts-pirsm-code lanuage="html" [code]="codes[0]"></ts-pirsm-code>
             <br>
-            <br>
-            <p>Label</p>
+            <p>Checkbox Label</p>
             <hr>
             <ts-checkbox [(checked)]="checkeds[2]" label="Apple"></ts-checkbox>
+            <ts-pirsm-code lanuage="html" [code]="codes[1]"></ts-pirsm-code>
             <br>
-            <br>
-            <p>Color</p>
+            <p>Checkbox Color</p>
             <hr>
             <ts-checkbox [(checked)]="checkeds[3]" color="primary" label="primary"></ts-checkbox>
             <ts-checkbox [(checked)]="checkeds[4]" defaultColor="muted" activeColor="danger" label="checkbox" [ngClass]="{'text-muted':!checkeds[4],'text-danger':checkeds[4]}"></ts-checkbox>
-            <!-- <ts-checkbox [(checked)]="checked" activeColor="success" defaultColor="muted" label="Apple" [ngClass]="{'text-primary':checked}"></ts-checkbox> -->
+            <ts-pirsm-code lanuage="html" [code]="codes[2]"></ts-pirsm-code>
         </div>
         <div class="form-group">
-            <p>Group</p>
+            <p>Checkbox Group</p>
             <hr>
-            <ts-checkbox-group [(values)]="values">
-                <ts-checkbox value="A" label="A"></ts-checkbox>
-                <ts-checkbox value="B" label="B"></ts-checkbox>
-                <ts-checkbox value="C" label="C"></ts-checkbox>
-            </ts-checkbox-group>
-            <p>{{values.join()}}</p>
             <ts-checkbox-group [(values)]="values">
                 <div class="row">
                     <div class="col-sm-3">
                         <div class="card rounded-0">
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <ts-checkbox value="Apple"></ts-checkbox>Card A</h4>
+                                    <ts-checkbox value="Apple" label="Apple"></ts-checkbox>
+                                </h4>
                                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                             </div>
                         </div>
@@ -42,7 +39,8 @@
                         <div class="card rounded-0">
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <ts-checkbox value="Bananer"></ts-checkbox>Card B</h4>
+                                    <ts-checkbox value="Bananer" label="Bananer"></ts-checkbox>
+                                </h4>
                                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                             </div>
                         </div>
@@ -51,7 +49,8 @@
                         <div class="card rounded-0">
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <ts-checkbox value="Computer"></ts-checkbox>Card C</h4>
+                                    <ts-checkbox value="Computer" label="Computer"></ts-checkbox>
+                                </h4>
                                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                             </div>
                         </div>
@@ -60,13 +59,67 @@
                         <div class="card rounded-0">
                             <div class="card-body">
                                 <h4 class="card-title">
-                                    <ts-checkbox value="Dog"></ts-checkbox>Card D</h4>
+                                    <ts-checkbox value="Dog" label="Dog"></ts-checkbox>
+                                </h4>
                                 <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
                             </div>
                         </div>
                     </div>
                 </div>
+                <br>
+                <p>values : {{values.join()}}</p>
+                <ts-pirsm-code lanuage="html" [code]="codes[3]"></ts-pirsm-code>
             </ts-checkbox-group>
         </div>
+        <div class="form-group">
+            <p>Radio Type & Label</p>
+            <hr>
+            <ts-radio type="dot" [(checked)]="checkeds[5]" [label]="checkeds[5].toString()"></ts-radio>
+            <ts-radio type="circle" [(checked)]="checkeds[6]" [label]="checkeds[6].toString()"></ts-radio>
+            <ts-pirsm-code language="html" [code]="codes[4]"></ts-pirsm-code>
+            <p>Radio Group</p>
+            <hr>
+            <ts-radio-group value="Right" [(value)]="radioValue">
+                <ts-radio value="Right" label="Right" color="success"></ts-radio>
+                <ts-radio value="Wrong" label="Wrong" color="danger"></ts-radio>
+            </ts-radio-group>
+            <br>
+            <p>{{radioValue}}</p>
+            <ts-pirsm-code language="html" [code]="codes[5]"></ts-pirsm-code>
+        </div>
+    </div>
+</div>
+<div #Info tab="Info" class="card rounded-0">
+    <div class="card-body">
+        <h4>CheckboxComponent</h4>
+        <hr>
+        <p>selector : <code>ts-checkbox</code></p>
+        <p>input :</p>
+        <pre>
+    // the label for checkbox
+    @Input() label: string
+
+    // checkbox value
+    @Input() value: any
+
+    // checked
+    @Input() checked: boolean
+
+    // checkbox color
+    @Input() color: string
+
+    // checkbox default color
+    @Input() defaultColor: string
+
+    // the color for checkbox on active    
+    @Input() activeColor: string
+
+    // checkbox style default : check ('chekc','square') 
+    @Input() type: string
+        </pre>
+        <p>output :</p>
+        <pre>
+    @Output() checkedChange = new EventEmitter&gt;boolean&lt;()
+        </pre>
     </div>
 </div>

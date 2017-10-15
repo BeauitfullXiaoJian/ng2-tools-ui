@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { CheckboxComponent } from './../components/checkbox/checkbox.component';
-import { CheckboxsComponent } from './../components/checkbox/checkboxs.direvtive';
+import { CheckboxsDirective } from './../components/checkbox/checkboxs.direvtive';
+import { RadioComponent } from './../components/checkbox/radio.component';
+import { RadioDirective } from './../components/checkbox/radios.direvtive';
 
 
 @NgModule({
@@ -10,11 +12,15 @@ import { CheckboxsComponent } from './../components/checkbox/checkboxs.direvtive
   ],
   declarations: [
     CheckboxComponent,
-    CheckboxsComponent,
+    CheckboxsDirective,
+    RadioComponent,
+    RadioDirective,
   ],
   exports: [
     CheckboxComponent,
-    CheckboxsComponent,
+    CheckboxsDirective,
+    RadioComponent,
+    RadioDirective,
   ]
 })
 export class CheckboxModule { }
