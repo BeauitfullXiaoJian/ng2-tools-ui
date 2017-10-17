@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { RouterModule, PreloadAllModules } from '@angular/router';
 import { AppComponent } from './app.component';
 import { TSOssModule } from './tools-ui';
 
@@ -19,7 +19,7 @@ import { TSOssModule } from './tools-ui';
       { path: 'tab', loadChildren: 'app/pages/tab/tab.module#TabModule' },
       { path: 'datepicker', loadChildren: 'app/pages/datepicker/datepicker.module#DatepickerModule' },
       { path: 'pagination', loadChildren: 'app/pages/pagination/pagination.module#PaginationModule' },
-    ])
+    ], { preloadingStrategy: PreloadAllModules })
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,6 +9,10 @@ export class Pagination {
         return { limit: this.limit, offset: this.offset }
     }
 
+    get maxPage(): number {
+        return Math.ceil(this.total / this.limit)
+    }
+
     getpageDataWith(params: any = {}): any {
         params.limit = this.limit
         params.offset = this.offset
@@ -22,15 +26,11 @@ export class Pagination {
     }
 
     hasNext(): boolean {
-        return this.offset < this.total
+        return this.page < this.maxPage
     }
 
     hasPrev(): boolean {
-        return this.offset > 0
-    }
-
-    get maxPage(): number {
-        return Math.ceil(this.total / this.limit)
+        return this.page > 1
     }
 
     clone(): Pagination {

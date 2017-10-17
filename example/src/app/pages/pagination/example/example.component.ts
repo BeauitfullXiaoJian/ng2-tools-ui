@@ -4,7 +4,7 @@ import { Pagination } from './../../../tools-ui';
 @Component({
   selector: 'app-example',
   templateUrl: './example.component.html',
-  styleUrls: ['./example.component.scss']
+  styleUrls: ['./example.component.css']
 })
 export class ExampleComponent {
 
@@ -12,26 +12,53 @@ export class ExampleComponent {
 
   constructor() {
     this.pagination = new Pagination(100, 3)
-    console.log(this.pagination.page)
   }
 
 
   codes = [
-    `<ts-pagination themes="btn-primary" prevTitle="PREV" nextTitle="NEXT" startTitle="START" endTitle="END" (pageChange)="pageChanged($event)" [collectionSize]="pagination.total" [ellipses]="true"></ts-pagination>
-  <ts-pagination themes="btn-primary,btn-secondary" prevTitle="PREV" nextTitle="NEXT" startTitle="START" endTitle="END" (pageChange)="pageChanged($event)" [collectionSize]="pagination.total" [ellipses]="true"></ts-pagination>
-  <ts-pagination themes="btn-primary,btn-secondary,btn-warning" prevTitle="PREV" nextTitle="NEXT" startTitle="START" endTitle="END"(pageChange)="pageChanged($event)" [collectionSize]="pagination.total" [ellipses]="true"></ts-pagination>
-  <ts-pagination themes="btn-primary,btn-secondary,btn-warning,btn-danger,btn-info" prevTitle="PREV" nextTitle="NEXT" startTitle="START" endTitle="END" (pageChange)="pageChanged($event)" [collectionSize]="pagination.total" [ellipses]="true"></ts-pagination>
+    `<ts-pagination colors="btn-dark" [(pagination)]="pagination" startTitle="Start" prevTitle="Prev" nextTitle="Next" endTitle="End" (pageChange)="pageChanged($event)"></ts-pagination>
+  <ts-pagination colors="btn-primary,btn-secondary" [(pagination)]="pagination" startTitle="Start" prevTitle="Prev" nextTitle="Next" endTitle="End" (pageChange)="pageChanged($event)"></ts-pagination>
+  <ts-pagination colors="btn-primary,btn-secondary,btn-warning" [(pagination)]="pagination" startTitle="Start" prevTitle="Prev" nextTitle="Next" endTitle="End" (pageChange)="pageChanged($event)"></ts-pagination>
+  <ts-pagination colors="btn-primary,btn-secondary,btn-warning,btn-danger,btn-info" [(pagination)]="pagination" startTitle="Start" prevTitle="Prev" nextTitle="Next" endTitle="End" (pageChange)="pageChanged($event)"></ts-pagination>
   <pre>{{pagination|json}}</pre>`,
     `...
   pagination = new Pagination(100)
   ...
-  pageChanged(page: number) {
-    this.pagination.page = page
+  pageChanged(page: pagination) {
+    
+  }`,
+    `export class Pagination {
+    
+    constructor(public total: number = 0, public page: number = 1, public limit = 10) { }
+
+    //get pagination offset
+    get offset(): number
+
+    //get pagination params
+    get pageData(): any 
+
+    //get pagination params with search params or other params
+    getpageDataWith(params: any = {}): any
+
+    //max page number value
+    get maxPage(): number
+      
+    //clean object,setting default value
+    reset() {}
+
+    //has next page
+    hasNext(): boolean {}
+
+    //has previous page
+    hasPrev(): boolean {}
+
+    //copy object
+    clone(): Pagination {}
   }`
   ]
 
-  pageChanged(page: number) {
-    this.pagination.page = page
+  pageChanged(pagination: Pagination) {
+
   }
 
 }
