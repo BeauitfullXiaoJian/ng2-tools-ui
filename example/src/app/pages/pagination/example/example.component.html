@@ -1,1 +1,52 @@
-<ts-pagination themes="btn-primary,btn-secondary,btn-warning" prevTitle="PREV" nextTitle="NEXT" startTitle="START" endTitle="END" (pageChange)="pageChanged($event)" [collectionSize]="pagination.total" [ellipses]="true"></ts-pagination>
+<ts-tab [tabs]="['Demo','Info']" activeTab="Demo" [pads]="[Demo,Info]" color="dark" type="pills" position="right"></ts-tab>
+<br>
+<div #Demo tab="Demo" class="card rounded-0">
+    <div class="card-body">
+        <h4>Colorfull Pagination</h4>
+        <hr>
+        <ts-pagination [pagination]="pagination"></ts-pagination>
+        <!-- <br>
+        <br>
+        <ts-pagination themes="btn-primary,btn-secondary" prevTitle="PREV" nextTitle="NEXT" startTitle="START" endTitle="END" (pageChange)="pageChanged($event)"
+            [collectionSize]="pagination.total" [ellipses]="true"></ts-pagination>
+        <br>
+        <br>
+        <ts-pagination themes="btn-primary,btn-secondary,btn-warning" prevTitle="PREV" nextTitle="NEXT" startTitle="START" endTitle="END"
+            (pageChange)="pageChanged($event)" [collectionSize]="pagination.total" [ellipses]="true"></ts-pagination>
+        <br>
+        <br>
+        <ts-pagination themes="btn-primary,btn-secondary,btn-warning,btn-danger,btn-info" prevTitle="PREV" nextTitle="NEXT" startTitle="START"
+            endTitle="END" (pageChange)="pageChanged($event)" [collectionSize]="pagination.total" [ellipses]="true"></ts-pagination>
+        <br>
+        <br>
+        <pre>{{pagination|json}}</pre>
+        <ts-pirsm-code language="typescript" [code]="codes[0]"></ts-pirsm-code>
+        <ts-pirsm-code language="typescript" [code]="codes[1]"></ts-pirsm-code> -->
+    </div>
+</div>
+<br>
+<div #Info tab="Info" class="card rounded-0">
+    <div class="card-body">
+        <h5>Selector</h5>
+        <hr>
+        <p>
+            <code>&lt;ts-pagination>&gt;&lt;/ts-pagination&gt;</code>
+        </p>
+        <h5>Input</h5>
+        <hr>
+        <p>@Input() themes : string //css class for pagination, default value : 'btn-secondary'</p>
+        <!-- <ts-pagination themes="btn-dark" [collectionSize]="pagination.total"></ts-pagination> -->
+        <br><br>
+        <p>@Input() nextTitle: string //title for next button, default value : "Next"</p>
+
+        <p>@Input() prevTitle: string //title for previous button, default value : "Previous"</p>
+
+        <p>@Input() endTitle: string //title for end button, default value : "End"</p>
+
+        <p>@Input() startTitle: string //title for start button, default value : 'Start' </p>
+
+        <p>@Input() page: number //active page number</p>
+        <!-- <ts-pagination themes="btn-outline-dark" [(page)]="pagination.page" [pageSize]="pagination.limit" [collectionSize]="pagination.total"></ts-pagination> -->
+        
+    </div>
+</div>

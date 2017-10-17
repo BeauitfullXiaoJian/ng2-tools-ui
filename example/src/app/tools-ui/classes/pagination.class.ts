@@ -20,4 +20,20 @@ export class Pagination {
         this.page = 1
         this.limit = 10
     }
+
+    hasNext(): boolean {
+        return this.offset < this.total
+    }
+
+    hasPrev(): boolean {
+        return this.offset > 0
+    }
+
+    get maxPage(): number {
+        return Math.ceil(this.total / this.limit)
+    }
+
+    clone(): Pagination {
+        return new Pagination(this.total, this.page, this.limit)
+    }
 }
