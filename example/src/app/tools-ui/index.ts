@@ -8,6 +8,7 @@ export { TabPadModule as TSTabModule } from './modules/tab-pad.module';
 export { DatePickerModule as TSDateModule } from './modules/datepicker.module';
 export { OSSModule as TSOssModule } from './modules/oss.module';
 export { ModalModule as TSModalModule } from './modules/modal.module';
+export { PaginationModule as TSPaginationModule } from './modules/pagination.module';
 
 
 /*const configs*/
@@ -21,6 +22,7 @@ export { OSSUploadDatas } from './interfaces/oss-params.interface';
 
 /*tool classes*/
 export { TSUploadResult, TSUploadingProgress, TSInputImages } from './classes/upload.class';
+export { Pagination } from './classes/pagination.class';
 
 /*tool services*/
 export { OssService as TSOssService } from './services/oss.service';

@@ -1,7 +1,7 @@
 import { Component, EventEmitter, Input, Output, OnChanges, ChangeDetectionStrategy, SimpleChanges } from '@angular/core';
 
 @Component({
-  selector: 'app-pagination',
+  selector: 'ts-pagination',
   templateUrl: './pagination.component.html',
   styleUrls: ['./pagination.component.scss']
 })
@@ -10,7 +10,7 @@ export class PaginationComponent implements OnChanges {
 
   @Input() nextTitle: string = "Next"
 
-  @Input() prevTitle: string = "Prev"
+  @Input() prevTitle: string = "Previous"
 
   @Input() endTitle: string = "End"
 
@@ -67,6 +67,8 @@ export class PaginationComponent implements OnChanges {
    */
   @Input() pageSize: number;
 
+  @Input() themes: string
+
   /**
    *  An event fired when the page is changed.
    *  Event's payload equals to the newly selected page.
@@ -86,7 +88,43 @@ export class PaginationComponent implements OnChanges {
     this.maxSize = 5;
     this.pageSize = 10;
     this.rotate = true;
+    this.themes = "btn-outline-secondary"
     //this.size = "lg";
+  }
+
+  get theme(): { start: string, prev: string, page: string, next: string, end: string } {
+
+    let theme = { start: "btn-outline-secondary", prev: "btn-outline-secondary", page: "btn-outline-secondary", next: "btn-outline-secondary", end: "btn-outline-secondary" }
+
+    try {
+      let themes = this.themes.split(',')
+      if (themes.length === 1) {
+        theme.page = theme.start = theme.prev = theme.next = theme.end = themes[0]
+      }
+      else if (themes.length === 2) {
+        theme.start = theme.prev = theme.next = theme.end = themes[0]
+        theme.page = themes[1]
+      }
+      else if (themes.length === 3) {
+        theme.start = theme.prev = themes[0]
+        theme.page = themes[1]
+        theme.next = theme.end = themes[2]
+      }
+      else if (themes.length === 5) {
+        theme.start = themes[0]
+        theme.prev = themes[1]
+        theme.page = themes[2]
+        theme.next = themes[3]
+        theme.end = themes[4]
+      }
+      return theme
+
+    }
+    catch (e) {
+      console.error(e)
+      console.error("pagination : your themes string was wrong")
+      return theme
+    }
   }
 
   hasPrevious(): boolean { return this.page > 1; }

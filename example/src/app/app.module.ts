@@ -17,7 +17,8 @@ import { TSOssModule } from './tools-ui';
       { path: 'input', loadChildren: 'app/pages/input/input.module#InputModule' },
       { path: 'icon', loadChildren: 'app/pages/icon/icon.module#IconModule' },
       { path: 'tab', loadChildren: 'app/pages/tab/tab.module#TabModule' },
-      { path: 'datepicker', loadChildren: 'app/pages/datepicker/datepicker.module#DatepickerModule' },      
+      { path: 'datepicker', loadChildren: 'app/pages/datepicker/datepicker.module#DatepickerModule' },
+      { path: 'pagination', loadChildren: 'app/pages/pagination/pagination.module#PaginationModule' },
     ])
   ],
   providers: [],
