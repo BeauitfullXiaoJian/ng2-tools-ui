@@ -11,6 +11,8 @@ export class DatepickerComponent implements OnInit {
 
   @Input() weekTitles: string[]
 
+  activeDate: { year: number, month: number, day: number }
+
   year: number
 
   month: number
@@ -41,6 +43,24 @@ export class DatepickerComponent implements OnInit {
     return trs
   }
 
+  constructor() {
+
+    //labels
+    this.weekTitles = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su']
+
+    //tody
+    let date = new Date()
+    this.year = date.getFullYear()
+    this.month = date.getMonth() + 1
+    this.day = date.getDate()
+
+    console.log(this.day)
+
+    //active day
+    this.activeDate = { year: this.year, month: this.month, day: this.day }
+
+  }
+
   getWeek() {
     let week;
     if (new Date().getDay() == 0) week = "星期日"
@@ -52,13 +72,15 @@ export class DatepickerComponent implements OnInit {
     if (new Date().getDay() == 6) week = "星期六"
     return week
   }
-  constructor() {
-    this.weekTitles = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su']
-    //tody
-    let date = new Date()
-    this.year = date.getFullYear()
-    this.month = date.getMonth() + 1
-    this.day = date.getDay() + 1
+
+  setDay(day: number): void {
+    this.activeDate.year = this.year
+    this.activeDate.month = this.month
+    this.activeDate.day = day
+  }
+
+  isActiveDay(day: number): boolean {
+    return (this.activeDate.year == this.year && this.activeDate.month == this.month && this.activeDate.day == day)
   }
 
   ngOnInit() { }

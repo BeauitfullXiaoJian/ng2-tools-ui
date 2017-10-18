@@ -1,11 +1,12 @@
 <div class="card">
+    <p>{{month}}</p>
     <table>
         <thead>
-            <th class="text-right" *ngFor="let title of weekTitles">{{title}}</th>
+            <th class="text-center" *ngFor="let title of weekTitles">{{title}}</th>
         </thead>
         <tbody>
             <tr *ngFor="let tr of trList">
-                <td class="ts-day text-right" *ngFor="let td of tr">{{td}}</td>
+                <td class="ts-day text-center rounded-circle" [ngClass]="{'bg-dark text-light':isActiveDay(td)}" *ngFor="let td of tr" (click)="setDay(td)">{{td}}</td>
             </tr>
         </tbody>
     </table>
