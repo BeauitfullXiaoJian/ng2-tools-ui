@@ -1,20 +1,22 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { TSPirsmModule, TSTabModule } from './../../tools-ui'
+import { TSPirsmModule, TSTabModule, TSMarkdownModule } from './../../tools-ui'
 import { CodeComponent } from './pad/code.component';
+import { MarkdownComponent } from './markdown/markdown.component';
 
 @NgModule({
   imports: [
-    CommonModule,
+    TSMarkdownModule,
     TSPirsmModule,
     TSTabModule,
     RouterModule.forChild([
-      { path: 'pad', component: CodeComponent }
+      { path: 'pad', component: CodeComponent },
+      { path: 'markdown', component: MarkdownComponent }
     ])
   ],
   declarations: [
     CodeComponent,
+    MarkdownComponent,
   ]
 })
 export class CodeModule { }

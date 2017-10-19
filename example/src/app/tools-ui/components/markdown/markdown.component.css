@@ -1,0 +1,4 @@
+::ng-deep .markdown-blockquote{
+    border-left: 3px solid #e1e1e1 !important;
+    padding-left: 10px !important;
+}

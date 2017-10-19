@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { TSPirsmModule, TSIconModule, TSTabModule, TSDateModule, TSMarkdownModule } from './../../tools-ui';
+import { TSPirsmModule, TSIconModule, TSTabModule, TSDateModule } from './../../tools-ui';
 import { CalendarComponent } from './calendar/calendar.component';
 
 @NgModule({
@@ -11,7 +11,6 @@ import { CalendarComponent } from './calendar/calendar.component';
     TSIconModule,
     TSTabModule,
     TSDateModule,
-    TSMarkdownModule,
     RouterModule.forChild([
       { path: 'calendar', component: CalendarComponent }
     ])

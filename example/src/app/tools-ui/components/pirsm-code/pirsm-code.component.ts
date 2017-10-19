@@ -30,7 +30,9 @@ export class PirsmCodeComponent implements OnChanges {
   @Input() codeStyle: { [key: string]: string }
   @ViewChild('pad') codePad: any
 
-  constructor() { }
+  constructor() {
+    this.language = "html"
+  }
 
   ngOnChanges(changes: SimpleChanges) {
 
