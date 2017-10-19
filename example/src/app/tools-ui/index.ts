@@ -9,6 +9,7 @@ export { DatePickerModule as TSDateModule } from './modules/datepicker.module';
 export { OSSModule as TSOssModule } from './modules/oss.module';
 export { ModalModule as TSModalModule } from './modules/modal.module';
 export { PaginationModule as TSPaginationModule } from './modules/pagination.module';
+export { MarkdownModule as TSMarkdownModule } from './modules/markdown.module';
 
 
 /*const configs*/

@@ -1,0 +1,68 @@
+<div class="card rounded-0">
+  <div class="card-body">
+    <div class="btn-group">
+      <button class="btn btn-sm btn-dark">
+        <i class="fa fa-header"></i>
+      </button>
+      <button class="btn btn-sm btn-dark">
+        <i class="fa fa-bold"></i>
+      </button>
+      <button class="btn btn-sm btn-dark">
+        <i class="fa fa-italic"></i>
+      </button>
+      <button class="btn btn-sm btn-dark">
+        <i class="fa fa fa-strikethrough"></i>
+      </button>
+      <button class="btn btn-sm btn-dark">
+        <i class="fa fa-eraser"></i>
+      </button>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-sm btn-dark">
+        <i class="fa fa-quote-left"></i>
+      </button>
+      <button class="btn btn-sm btn-dark">
+        <i class="fa fa-list"></i>
+      </button>
+      <button class="btn btn-sm btn-dark">
+        <i class="fa fa-list-ol"></i>
+      </button>
+      <button class="btn btn-sm btn-dark">
+        <b>--</b>
+      </button>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-sm btn-dark">
+        <i class="fa fa-link"></i>
+      </button>
+      <button class="btn btn-sm btn-dark">
+        <i class="fa fa-file-image-o"></i>
+      </button>
+      <button class="btn btn-sm btn-dark">
+        <i class="fa fa-code"></i>
+      </button>
+      <button class="btn btn-sm btn-dark">
+        <i class="fa fa-table"></i>
+      </button>
+    </div>
+    <div class="btn-group">
+      <button class="btn btn-sm btn-dark">
+        <i class="fa fa-eye"></i>
+      </button>
+      <button class="btn btn-sm btn-dark">
+        <i class="fa fa-arrows-alt"></i>
+      </button>
+
+      <button class="btn btn-sm btn-dark">
+        <i class="fa fa-save"></i>
+      </button>
+    </div>
+    <hr>
+    <div class="row">
+      <div class="w-50">
+        <textarea class="form-control border-0 h-100" [(ngModel)]="content"></textarea>
+      </div>
+      <div class="w-50" [innerHtml]="makerdownHtml"></div>
+    </div>
+  </div>
+</div>
