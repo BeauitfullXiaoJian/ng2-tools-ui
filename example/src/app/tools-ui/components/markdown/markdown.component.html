@@ -1,75 +1,42 @@
-<div class="card rounded-0" [ngStyle]="{'width':width}">
-  <div class="card-body">
-    <div class="btn-group">
-      <button (click)="insertHeader()" type="button" class="btn btn-sm {{btnClass}}">
-        <i class="fa fa-header"></i>
-      </button>
-      <button (click)="insertBold()" type="button" class="btn btn-sm {{btnClass}}">
-        <i class="fa fa-bold"></i>
-      </button>
-      <button (click)="insertItalic()" type="button" class="btn btn-sm {{btnClass}}">
-        <i class="fa fa-italic"></i>
-      </button>
-      <button (click)="insertStrikethrough()" type="button" class="btn btn-sm {{btnClass}}">
-        <i class="fa fa fa-strikethrough"></i>
-      </button>
-      <button type="button" class="btn btn-sm {{btnClass}}">
-        <i class="fa fa-eraser"></i>
-      </button>
+<div class="card rounded-0" [ngStyle]="{'width':width}" [ngClass]="{'fixed-top h-100':showfullScreen}">
+    <div class="card-body">
+        <div class="btn-group">
+            <button (click)="insertHeader()" type="button" class="btn btn-sm {{btnClass}}"><i class="fa fa-header"></i></button>
+            <button (click)="insertBold()" type="button" class="btn btn-sm {{btnClass}}"><i class="fa fa-bold"></i></button>
+            <button (click)="insertItalic()" type="button" class="btn btn-sm {{btnClass}}"><i class="fa fa-italic"></i></button>
+            <button (click)="insertStrikethrough()" type="button" class="btn btn-sm {{btnClass}}"><i class="fa fa fa-strikethrough"></i></button>
+        </div>
+        <div class="btn-group">
+            <button (click)="insertQuote()" type="button" class="btn btn-sm {{btnClass}}"><i class="fa fa-quote-left"></i></button>
+            <button (click)="insertList()" type="button" class="btn btn-sm {{btnClass}}"><i class="fa fa-list"></i></button>
+            <button (click)="insertNumList()" type="button" class="btn btn-sm {{btnClass}}"><i class="fa fa-list-ol"></i></button>
+            <button (click)="insertLine()" type="button" class="btn btn-sm {{btnClass}}"><b>--</b></button>
+        </div>
+        <div class="btn-group">
+            <button (click)="insertLink()" type="button" class="btn btn-sm {{btnClass}}"><i class="fa fa-link"></i></button>
+            <button (click)="insertImage()" type="button" class="btn btn-sm {{btnClass}}"><i class="fa fa-file-image-o"></i></button>
+            <button (click)="insertCode()" type="button" class="btn btn-sm {{btnClass}}"><i class="fa fa-code"></i></button>
+            <button (click)="insertTable()" type="button" class="btn btn-sm {{btnClass}}"><i class="fa fa-table"></i></button>
+        </div>
+        <div class="btn-group">
+            <button (click)="cleanAll()" type="button" class="btn btn-sm {{btnClass}}"><i class="fa fa-eraser"></i></button>
+            <button (click)="showPreviewPad=!showPreviewPad" type="button" class="btn btn-sm {{btnClass}}"><i class="fa" [ngClass]="{'fa-eye-slash':showPreviewPad,'fa-eye':!showPreviewPad}"></i></button>
+            <button (click)="splitScreen()" type="button" class="btn btn-sm {{btnClass}}"><i class="fa fa-columns" aria-hidden="true"></i></button>
+            <button (click)="fullScreen()" type="button" class="btn btn-sm {{btnClass}}"><i class="fa fa-arrows-alt"></i></button>
+        </div>
+        <hr>
+        <!--code&preview pad-->
+        <div class="row" [ngStyle]="{'height':height}" *ngIf="preview&&!showPreviewPad">
+            <div class="w-50">
+                <textarea #editor class="form-control border-0 h-100" [(ngModel)]="content"></textarea>
+            </div>
+            <div class="w-50 markdown" [innerHtml]="makerdownHtml"></div>
+        </div>
+        <!--code pad-->
+        <div [ngStyle]="{'height':height}" *ngIf="!preview&&!showPreviewPad">
+            <textarea #editor class="form-control border-0 h-100" [(ngModel)]="content"></textarea>
+        </div>
+        <!--preview pad-->
+        <div class="markdown" [ngStyle]="{'height':height}" *ngIf="showPreviewPad" [innerHtml]="makerdownHtml"></div>
     </div>
-    <div class="btn-group">
-      <button (click)="insertQuote()" type="button" class="btn btn-sm {{btnClass}}">
-        <i class="fa fa-quote-left"></i>
-      </button>
-      <button type="button" class="btn btn-sm {{btnClass}}">
-        <i class="fa fa-list"></i>
-      </button>
-      <button type="button" class="btn btn-sm {{btnClass}}">
-        <i class="fa fa-list-ol"></i>
-      </button>
-      <button type="button" class="btn btn-sm {{btnClass}}">
-        <b>--</b>
-      </button>
-    </div>
-    <div class="btn-group">
-      <button type="button" class="btn btn-sm {{btnClass}}">
-        <i class="fa fa-link"></i>
-      </button>
-      <button type="button" class="btn btn-sm {{btnClass}}">
-        <i class="fa fa-file-image-o"></i>
-      </button>
-      <button (click)="insertCode()" type="button" class="btn btn-sm {{btnClass}}">
-        <i class="fa fa-code"></i>
-      </button>
-      <button type="button" class="btn btn-sm {{btnClass}}">
-        <i class="fa fa-table"></i>
-      </button>
-    </div>
-    <div class="btn-group">
-      <button (click)="showPreviewPad=!showPreviewPad" type="button" class="btn btn-sm {{btnClass}}">
-        <i class="fa" [ngClass]="{'fa-eye-slash':showPreviewPad,'fa-eye':!showPreviewPad}"></i>
-      </button>
-      <button type="button" class="btn btn-sm {{btnClass}}">
-        <i class="fa fa-arrows-alt"></i>
-      </button>
-
-      <button type="button" class="btn btn-sm {{btnClass}}">
-        <i class="fa fa-save"></i>
-      </button>
-    </div>
-    <hr>
-    <!--code&preview pad-->
-    <div class="row" [ngStyle]="{'height':height}" *ngIf="preview&&!showPreviewPad">
-      <div class="w-50">
-        <textarea #editor class="form-control border-0 h-100" [(ngModel)]="content"></textarea>
-      </div>
-      <div class="w-50 markdown" [innerHtml]="makerdownHtml"></div>
-    </div>
-    <!--code pad-->
-    <div [ngStyle]="{'height':height}" *ngIf="!preview&&!showPreviewPad">
-      <textarea #editor class="form-control border-0 h-100" [(ngModel)]="content"></textarea>
-    </div>
-    <!--preview pad-->
-    <div class="markdown" [ngStyle]="{'height':height}" *ngIf="showPreviewPad" [innerHtml]="makerdownHtml"></div>
-  </div>
 </div>

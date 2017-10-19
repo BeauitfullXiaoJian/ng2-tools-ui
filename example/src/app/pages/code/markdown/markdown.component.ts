@@ -7,11 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MarkdownComponent implements OnInit {
 
-  content = `
-  \`\`\`html
-  <div></div>
-  \`\`\`
-  `
+  content = `![](http://www.hello1024.top/flat-ui/img/box-image/2.jpg)`
 
   constructor() { }
 

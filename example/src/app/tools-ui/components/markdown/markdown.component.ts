@@ -30,18 +30,26 @@ export class MarkdownComponent {
 
   @ViewChild('editor') editor: any
 
+  saveSize = { width: "600px", height: "400px" }
+
   showPreviewPad: boolean
+
+  showfullScreen: boolean
 
   get makerdownHtml(): string {
 
     let renderer = new window.marked.Renderer();
 
-    renderer.code = (code: string, language: string):string => {
+    renderer.code = (code: string, language: string): string => {
       return `<pre class='language-${language}'><code>${Prism.highlight(code, LANGUAGE[language])}</code></pre>`
     }
 
-    renderer.blockquote = (quote: string):string => {
+    renderer.blockquote = (quote: string): string => {
       return `<blockquote class="markdown-blockquote">${quote}</blockquote>`
+    }
+
+    renderer.table = (header: string, body: string): string => {
+      return `<table class="table table-striped table-inverse"><thead>${header}<thead><tbody>${body}<tbody></table>`
     }
 
     return window.marked(this.content || '', { renderer: renderer })
@@ -54,6 +62,7 @@ export class MarkdownComponent {
     this.width = '600px'
     this.btnClass = 'btn-dark'
     this.showPreviewPad = false
+    this.showfullScreen = false
   }
 
   insertHeader() {
@@ -77,11 +86,64 @@ export class MarkdownComponent {
   }
 
   insertCode() {
-    this.insertText(`\`\`\`language
+    this.insertText(`\`\`\`javascript
+
     ...
-    \`\`\``)
+
+\`\`\``)
   }
 
+  fullScreen() {
+    if (this.showfullScreen === true) {
+      this.restSize()
+      return
+    }
+    this.saveSize.width = this.width
+    this.saveSize.height = this.height
+    this.width = "100%"
+    this.height = "100%"
+    this.showfullScreen = true
+  }
+
+  restSize() {
+    this.width = this.saveSize.width
+    this.height = this.saveSize.height
+    this.showfullScreen = false
+  }
+
+  splitScreen() {
+    this.preview = !this.preview
+  }
+
+  insertList() {
+    this.insertText(`* item`)
+  }
+
+  insertNumList() {
+    this.insertText(`1. item`)
+  }
+
+  insertTable() {
+    this.insertText(`| title1 | title2 | title2 |
+| ------ | ------ | ------ |
+| 1      | 2      | 3      |`)
+  }
+
+  insertImage() {
+    this.insertText(`![]()`)
+  }
+
+  insertLink() {
+    this.insertText(`[title](http://www.example.com")`)
+  }
+
+  insertLine() {
+    this.insertText(`------------`)
+  }
+
+  cleanAll() {
+    this.content = ''
+  }
 
   insertText(str: string) {
 
