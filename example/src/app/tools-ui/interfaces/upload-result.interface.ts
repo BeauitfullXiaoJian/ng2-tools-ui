@@ -1,10 +1,12 @@
 export interface UploadResult {
     source: string,
     result: boolean,
-    message: string
+    message: string,
+    error?: ErrorEvent
 }
 
 export interface UploadingProgress {
     ready: boolean,
-    loaded: number
+    loaded: number,
+    error?: ErrorEvent
 }

@@ -5,19 +5,23 @@ export class TSUploadResult implements UploadResult {
     public source: string
     public result: boolean
     public message: string
-    constructor(source: string, result: boolean, message: string) {
+    public error: ErrorEvent
+    constructor(source: string, result: boolean, message: string, error?: ErrorEvent) {
         this.source = source
         this.result = result
         this.message = message
+        this.error = error || null
     }
 }
 
 export class TSUploadingProgress implements UploadingProgress {
     public ready: boolean
     public loaded: number
-    constructor(ready: boolean, loaded: number) {
+    public error: ErrorEvent    
+    constructor(ready: boolean, loaded: number, error?: ErrorEvent) {
         this.ready = ready
         this.loaded = loaded
+        this.error = error || null
     }
 }
 

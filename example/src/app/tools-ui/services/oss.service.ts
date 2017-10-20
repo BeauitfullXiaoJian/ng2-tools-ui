@@ -35,7 +35,7 @@ export class OssService {
                 response.target.status === 200 ? handel.ready(new TSUploadingProgress(true, 100)) : handel.ready(new TSUploadingProgress(false, -1))
             }
             request.upload.onprogress = (event: any) => { handel.ready(new TSUploadingProgress(false, Math.round(event.loaded / event.total * 100))) }
-            request.onerror = (error: any) => { console.error(error); handel.ready(new TSUploadingProgress(false, -1)) }
+            request.onerror = (error: ErrorEvent) => { console.error(error); handel.ready(new TSUploadingProgress(false, -1, error)) }
             request.send(formData)
         })
     }

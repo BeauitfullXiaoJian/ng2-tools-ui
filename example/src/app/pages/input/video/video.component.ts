@@ -25,7 +25,7 @@ export class VideoComponent {
               obs.complete()
             }
             if (params.loaded === -1) {
-              obs.next(new TSUploadResult(null, false, "uploda error"))
+              obs.next(new TSUploadResult(null, false, "uploda error,file too large"))
               obs.complete()
             }
             if (params.loaded >= 0) {
