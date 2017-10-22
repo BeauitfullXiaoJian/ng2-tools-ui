@@ -12,6 +12,7 @@ export class DropdownComponent {
   @Input() items: Array<string | { value: any, text: string }>
   @Input() title: string
   @Input() select: boolean
+  @Input() dropup: boolean
   @Input() useNumber: number
   @Input() value: any
   @Output() valueChange = new EventEmitter<any>()
@@ -26,12 +27,22 @@ export class DropdownComponent {
     this.title = "Dropdown"
     this.items = []
     this.select = false
+    this.dropup = false
     this.useNumber = -1
   }
 
   openDropdown() {
+    this.dropdownMenu.nativeElement.style.display = "block"
+    this.dropdownMenu.nativeElement.style.visibility = "hidden"
+    if (this.dropup === true) {
+      this.dropdownMenu.nativeElement.style.transform = `translate3d(0px, -${this.dropdownMenu.nativeElement.clientHeight + 4}px, 0px)`
+    }
+    else {
+      this.dropdownMenu.nativeElement.style.transform = `translate3d(0px, ${this.dropdownToggle.nativeElement.clientHeight + 4}px, 0px)`
+    }
+    this.dropdownMenu.nativeElement.style.visibility = ""
+    this.dropdownMenu.nativeElement.style.display = ""
     this.open = true
-    this.dropdownMenu.nativeElement.style.transform = `translate3d(0px, ${this.dropdownToggle.nativeElement.clientHeight + 4}px, 0px)`
   }
 
   closeDropdown() {
@@ -78,7 +89,7 @@ export class DropdownComponent {
 
   get realTitle(): string {
     if (this.select === true) {
-      return (this.value!=undefined&&this.value!=null) ? function (that:any) {
+      return (this.value != undefined && this.value != null) ? function (that: any) {
         let title = ""
         let items = that.itemsList
         for (let i = 0; i < items.length; i++) {

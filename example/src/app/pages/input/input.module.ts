@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { TSPirsmModule, TSInputModule, TSTabModule, TSIconModule, TSCheckboxModule } from './../../tools-ui';
+import { TSPirsmModule, TSInputModule, TSTabModule, TSIconModule, TSCheckboxModule ,TSDropdownModule} from './../../tools-ui';
 
 import { TextComponent } from './text/text.component';
 import { VideoComponent } from './video/video.component';
@@ -10,16 +10,17 @@ import { ImageComponent } from './image/image.component';
 import { FileComponent } from './file/file.component';
 import { NumberComponent } from './number/number.component';
 import { CheckboxComponent } from './checkbox/checkbox.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 @NgModule({
   imports: [
-    CommonModule,
     FormsModule,
     TSPirsmModule,
     TSInputModule,
     TSIconModule,
     TSTabModule,
     TSCheckboxModule,
+    TSDropdownModule,
     RouterModule.forChild([
       { path: 'text', component: TextComponent },
       { path: 'video', component: VideoComponent },
@@ -27,6 +28,7 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
       { path: 'file', component: FileComponent },
       { path: 'number', component: NumberComponent },
       { path: 'checkbox', component: CheckboxComponent },
+      { path: 'dropdown', component: DropdownComponent },      
     ])
   ],
   declarations: [
@@ -36,6 +38,7 @@ import { CheckboxComponent } from './checkbox/checkbox.component';
     FileComponent,
     NumberComponent,
     CheckboxComponent,
+    DropdownComponent,
   ]
 })
 export class InputModule { }
