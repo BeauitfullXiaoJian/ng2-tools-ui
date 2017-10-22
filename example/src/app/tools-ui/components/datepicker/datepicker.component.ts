@@ -1,15 +1,22 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
+
 const WEEK_DAY_NUM = 7
+const MIN_YEAR = 1000
+const MIN_MONTH = 1
+const MAX_MONTH = 12
 
 @Component({
   selector: 'ts-datepicker',
   templateUrl: './datepicker.component.html',
   styleUrls: ['./datepicker.component.css']
 })
-export class DatepickerComponent implements OnInit {
+export class DatepickerComponent {
 
 
   @Input() weekTitles: string[]
+
+  @Input() monthTitles: string[]
+
 
   activeDate: { year: number, month: number, day: number }
 
@@ -47,6 +54,7 @@ export class DatepickerComponent implements OnInit {
 
     //labels
     this.weekTitles = ['Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa', 'Su']
+    this.monthTitles = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
 
     //tody
     let date = new Date()
@@ -54,26 +62,17 @@ export class DatepickerComponent implements OnInit {
     this.month = date.getMonth() + 1
     this.day = date.getDate()
 
-    console.log(this.day)
-
     //active day
     this.activeDate = { year: this.year, month: this.month, day: this.day }
 
   }
 
-  getWeek() {
-    let week;
-    if (new Date().getDay() == 0) week = "星期日"
-    if (new Date().getDay() == 1) week = "星期一"
-    if (new Date().getDay() == 2) week = "星期二"
-    if (new Date().getDay() == 3) week = "星期三"
-    if (new Date().getDay() == 4) week = "星期四"
-    if (new Date().getDay() == 5) week = "星期五"
-    if (new Date().getDay() == 6) week = "星期六"
-    return week
+  getMonth(month: number): string {
+    return this.monthTitles[month - 1]
   }
 
   setDay(day: number): void {
+    if (day <= 0) return
     this.activeDate.year = this.year
     this.activeDate.month = this.month
     this.activeDate.day = day
@@ -83,6 +82,24 @@ export class DatepickerComponent implements OnInit {
     return (this.activeDate.year == this.year && this.activeDate.month == this.month && this.activeDate.day == day)
   }
 
-  ngOnInit() { }
+  nextMonth() {
+    if (this.month < MAX_MONTH) {
+      this.month++
+    }
+    else {
+      this.year++
+      this.month = MIN_MONTH
+    }
+  }
+
+  prevMonth() {
+    if (this.month > MIN_MONTH) {
+      this.month--
+    }
+    else if (this.year > MIN_YEAR) {
+      this.year--
+      this.month = MAX_MONTH
+    }
+  }
 
 }

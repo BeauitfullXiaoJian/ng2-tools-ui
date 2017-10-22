@@ -1,0 +1,8 @@
+<div class="btn-group" [class.show]="open" (click)="open?closeDropdown():openDropdown()">
+    <button #DropdownToggle (blur)="trycloseDropdown($event)" type="button" class="btn dropdown-toggle {{btnClass}}" aria-haspopup="true"
+        aria-expanded="true">{{realTitle}}</button>
+    <div #DropdownMenu class="dropdown-menu" [class.show]="open" x-placement="bottom-start" style="position: absolute; top: 0px; left: 0px; will-change: transform;">
+        <button *ngFor="let item of itemsList" [class.active]="item.value==value" class="dropdown-item" (click)="setValue(item)">{{item.text}}</button>
+        <!-- <div class="dropdown-divider"></div> -->
+    </div>
+</div>

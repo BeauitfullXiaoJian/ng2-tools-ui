@@ -1,16 +1,18 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { DatepickerComponent } from './../components/datepicker/datepicker.component';
+import { DropdownModule } from './dropdown.module';
 
 @NgModule({
   imports: [
-    CommonModule
+    DropdownModule,
   ],
   declarations: [
     DatepickerComponent
   ],
   exports: [
-    DatepickerComponent
+    DropdownModule,
+    DatepickerComponent,
   ]
 })
 export class DatePickerModule { }

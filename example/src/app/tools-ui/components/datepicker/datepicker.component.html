@@ -1,13 +1,43 @@
-<div class="card">
-    <p>{{month}}</p>
-    <table>
-        <thead>
-            <th class="text-center" *ngFor="let title of weekTitles">{{title}}</th>
-        </thead>
-        <tbody>
-            <tr *ngFor="let tr of trList">
-                <td class="ts-day text-center rounded-circle" [ngClass]="{'bg-dark text-light':isActiveDay(td)}" *ngFor="let td of tr" (click)="setDay(td)">{{td}}</td>
-            </tr>
-        </tbody>
-    </table>
+<div class="card rounded-0 ts-box">
+    <div class="card-body">
+        <table class="ts-datepicker-table">
+            <thead>
+                <tr class="ts-weeks">
+                    <th class="text-center" [ngClass]="{'text-danger':i>=5}" *ngFor="let title of weekTitles;index as i">{{title}}</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="text-muted ts-month-title" colspan="7">{{getMonth(month)}} </td>
+                </tr>
+                <tr *ngFor="let tr of trList">
+                    <td class="ts-day text-center rounded-circle" [ngClass]="{'bg-dark text-light':isActiveDay(td),'ts-day-hover':td>0}" *ngFor="let td of tr"
+                        (click)="setDay(td)">{{td||''}}</td>
+                </tr>
+                <tr *ngIf="trList.length<5">
+                    <td class="ts-day" colspan="7">&nbsp;</td>
+                </tr>
+                <tr *ngIf="trList.length<6">
+                    <td class="ts-day" colspan="7">&nbsp;</td>
+                </tr>
+                <tr>
+                    <td class="text-right" colspan="7">
+                        <button class="btn btn-dark">{{year}}
+                            <i class="fa fa-caret-down fa-fw" aria-hidden="true"></i>
+                        </button>
+                        <!-- <button class="btn btn-dark">{{getMonth(month)}}
+                            <i class="fa fa-caret-down fa-fw" aria-hidden="true"></i>
+                        </button> -->
+                        <ts-dropdown [items]="monthTitles" [title]="Month" [value]="month" (valueChange)="month=$event" [useNumber]="1" [select]="true"></ts-dropdown>
+                        <button (click)="prevMonth()" type="button" class="btn btn-dark">
+                            <i class="fa fa-angle-left fa-lg fa-fw" aria-hidden="true"></i>
+                        </button>
+                        <button (click)="nextMonth()" class="btn btn-dark">
+                            <i class="fa fa-angle-right fa-lg fa-fw" aria-hidden="true"></i>
+                        </button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </div>

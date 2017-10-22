@@ -1,9 +1,27 @@
-.ts-day {
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
+.ts-box{
+    max-width: 360px;
 }
-.ts-day:hover{
+.ts-datepicker-table{
+    margin: auto auto;
+}
+.ts-month-title{
+    padding-left: 15px;
+    padding-top: 15px;
+    font-size: 18px;
+}
+.ts-weeks{
+    border-bottom: 1px solid #cccccc;
+}
+.ts-weeks th    {
+    padding-bottom: 10px;
+}
+.ts-day {
+    width: 45px;
+    height: 30px;
+    line-height: 30px;
+    border: 15px solid transparent;
+}
+.ts-day-hover:hover{
     background-color: #cccccc;
 }
 
