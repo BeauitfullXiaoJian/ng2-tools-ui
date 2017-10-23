@@ -1,27 +1,33 @@
-.ts-box{
+.ts-box {
     max-width: 360px;
 }
-.ts-datepicker-table{
+
+.ts-datepicker-table {
     margin: auto auto;
 }
-.ts-month-title{
+
+.ts-month-title {
     padding-left: 15px;
     padding-top: 15px;
     font-size: 18px;
 }
-.ts-weeks{
-    border-bottom: 1px solid #cccccc;
+
+.ts-weeks {
+    border-bottom: 1px solid rgb(245, 245, 245);
 }
-.ts-weeks th    {
+
+.ts-weeks th {
     padding-bottom: 10px;
 }
+
 .ts-day {
     width: 45px;
     height: 30px;
     line-height: 30px;
     border: 15px solid transparent;
 }
-.ts-day-hover:hover{
+
+.ts-day-hover:hover {
     background-color: #cccccc;
 }
 

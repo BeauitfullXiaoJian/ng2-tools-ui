@@ -1,4 +1,4 @@
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { Component, Input, Output, EventEmitter, OnInit } from '@angular/core';
 
 const WEEK_DAY_NUM = 7
 const MIN_YEAR = 1000
@@ -10,16 +10,24 @@ const MAX_MONTH = 12
   templateUrl: './datepicker.component.html',
   styleUrls: ['./datepicker.component.css']
 })
-export class DatepickerComponent {
+export class DatepickerComponent implements OnInit {
 
 
   @Input() weekTitles: string[]
 
   @Input() monthTitles: string[]
 
+  @Input() activeDate: { year: number, month: number, day: number }
+
+  @Input() btnClass: string
+
+  @Input() textClass: string
+
+  @Input() activeClass: string
+
   @Output() activeDateChange = new EventEmitter<{ year: number, month: number, day: number }>()
 
-  @Input() activeDate: { year: number, month: number, day: number }
+
 
   year: number
 
@@ -79,6 +87,16 @@ export class DatepickerComponent {
     //active day
     this.activeDate = { year: this.year, month: this.month, day: this.day }
 
+    //style
+    this.btnClass = "btn-dark"
+    this.textClass = "text-dark"
+    this.activeClass="bg-dark text-light"
+  }
+
+  ngOnInit() {
+    if (this.activeDate === undefined || this.activeDate === null) {
+      this.activeDate = { year: this.year, month: this.month, day: this.day }
+    }
   }
 
   getMonth(month: number): string {

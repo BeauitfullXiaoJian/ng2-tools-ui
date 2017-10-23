@@ -6,7 +6,7 @@ import { Component, ElementRef, Directive, AfterViewInit } from '@angular/core';
 
   },
   inputs: [
-
+    'dropup'
   ],
   exportAs: 'tsDropdown'
 })
@@ -18,8 +18,11 @@ export class DropdownDirective implements AfterViewInit {
 
   show: boolean
 
+  dropup: boolean
+
   constructor(private elementRef: ElementRef) {
     this.show = false
+    this.dropup = false
   }
 
   ngAfterViewInit() {
@@ -36,6 +39,8 @@ export class DropdownDirective implements AfterViewInit {
     this.menusDom.addEventListener('click', event => {
       this.closeMenu()
     })
+    this.menusDom.style.top = "0"
+    this.menusDom.style.left = "0"
   }
 
   toggle() {
@@ -50,6 +55,12 @@ export class DropdownDirective implements AfterViewInit {
   openMenu() {
     this.show = true
     this.menusDom.style.display = "block"
+    if (this.dropup === true) {
+      this.menusDom.style.transform = `translate3d(0px, -${this.menusDom.clientHeight + 4}px, 0px)`
+    }
+    else {
+      this.menusDom.style.transform = `translate3d(0px, ${this.buttonDom.clientHeight + 4}px, 0px)`
+    }
   }
 
   closeMenu() {
