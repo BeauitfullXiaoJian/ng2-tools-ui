@@ -12,7 +12,7 @@ export class CodeComponent {
 
   // code string
   codes = [
-    `<ts-pirsm-code language="html" [code]="code"></ts-pirsm-code>`,
+    `<ts-prism-code language="html" [code]="code"></ts-prism-code>`,
     `code=\`<div>a code pad</div>\``,
     `<div>a code pad</div>`,
   ]

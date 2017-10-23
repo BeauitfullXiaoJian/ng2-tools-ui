@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 
 const WEEK_DAY_NUM = 7
 const MIN_YEAR = 1000
@@ -17,8 +17,9 @@ export class DatepickerComponent {
 
   @Input() monthTitles: string[]
 
+  @Output() activeDateChange = new EventEmitter<{ year: number, month: number, day: number }>()
 
-  activeDate: { year: number, month: number, day: number }
+  @Input() activeDate: { year: number, month: number, day: number }
 
   year: number
 
@@ -50,6 +51,19 @@ export class DatepickerComponent {
     return trs
   }
 
+  get yearList(): Array<number> {
+    let years = []
+    for (let i = 0; i < 3; i++) {
+      years.push(this.year - 3 + i)
+
+    }
+    years.push(this.year)
+    for (let i = 0; i < 3; i++) {
+      years.push(this.year + 1 + i)
+    }
+    return years
+  }
+
   constructor() {
 
     //labels
@@ -76,6 +90,7 @@ export class DatepickerComponent {
     this.activeDate.year = this.year
     this.activeDate.month = this.month
     this.activeDate.day = day
+    this.activeDateChange.emit(this.activeDate)
   }
 
   isActiveDay(day: number): boolean {
@@ -99,6 +114,16 @@ export class DatepickerComponent {
     else if (this.year > MIN_YEAR) {
       this.year--
       this.month = MAX_MONTH
+    }
+  }
+
+  nextYear() {
+    this.year++
+  }
+
+  prevYear() {
+    if (this.year > MIN_YEAR) {
+      this.year--
     }
   }
 

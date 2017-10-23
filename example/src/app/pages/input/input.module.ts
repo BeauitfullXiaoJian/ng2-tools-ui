@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { TSPirsmModule, TSInputModule, TSTabModule, TSIconModule, TSCheckboxModule ,TSDropdownModule} from './../../tools-ui';
+import { TSPrismModule, TSInputModule, TSTabModule, TSIconModule, TSCheckboxModule ,TSDropdownModule} from './../../tools-ui';
 
 import { TextComponent } from './text/text.component';
 import { VideoComponent } from './video/video.component';
@@ -15,7 +15,7 @@ import { DropdownComponent } from './dropdown/dropdown.component';
 @NgModule({
   imports: [
     FormsModule,
-    TSPirsmModule,
+    TSPrismModule,
     TSInputModule,
     TSIconModule,
     TSTabModule,

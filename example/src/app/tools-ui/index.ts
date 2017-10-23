@@ -1,5 +1,5 @@
 /*tool modules*/
-export { PirsmCodeModule as TSPirsmModule } from './modules/pirsm-code.module';
+export { PrismCodeModule as TSPrismModule } from './modules/prism-code.module';
 export { LoadingModule as TSLoadingModule } from './modules/loading-directive.module';
 export { InputModule as TSInputModule } from './modules/input-component.module';
 export { CheckboxModule as TSCheckboxModule } from './modules/checkbox-component.module';
@@ -13,7 +13,7 @@ export { MarkdownModule as TSMarkdownModule } from './modules/markdown.module';
 export { DropdownModule as TSDropdownModule } from './modules/dropdown.module';
 
 /*const configs*/
-export { CODE_LANGUAGE } from './components/pirsm-code/pirsm-code.component';
+export { CODE_LANGUAGE } from './components/prism-code/prism-code.component';
 
 /*tool interfaces*/
 export { UploadResult, UploadingProgress } from './interfaces/upload-result.interface';

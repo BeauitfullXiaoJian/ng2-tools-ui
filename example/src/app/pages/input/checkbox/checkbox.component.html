@@ -7,18 +7,18 @@
             <hr>
             <ts-checkbox [(checked)]="checkeds[0]"></ts-checkbox>
             <ts-checkbox [(checked)]="checkeds[1]" type="square"></ts-checkbox>
-            <ts-pirsm-code lanuage="html" [code]="codes[0]"></ts-pirsm-code>
+            <ts-prism-code lanuage="html" [code]="codes[0]"></ts-prism-code>
             <br>
             <p>Checkbox Label</p>
             <hr>
             <ts-checkbox [(checked)]="checkeds[2]" label="Apple"></ts-checkbox>
-            <ts-pirsm-code lanuage="html" [code]="codes[1]"></ts-pirsm-code>
+            <ts-prism-code lanuage="html" [code]="codes[1]"></ts-prism-code>
             <br>
             <p>Checkbox Color</p>
             <hr>
             <ts-checkbox [(checked)]="checkeds[3]" color="primary" label="primary"></ts-checkbox>
             <ts-checkbox [(checked)]="checkeds[4]" defaultColor="muted" activeColor="danger" label="checkbox" [ngClass]="{'text-muted':!checkeds[4],'text-danger':checkeds[4]}"></ts-checkbox>
-            <ts-pirsm-code lanuage="html" [code]="codes[2]"></ts-pirsm-code>
+            <ts-prism-code lanuage="html" [code]="codes[2]"></ts-prism-code>
         </div>
         <div class="form-group">
             <p>Checkbox Group</p>
@@ -68,7 +68,7 @@
                 </div>
                 <br>
                 <p>values : {{values.join()}}</p>
-                <ts-pirsm-code lanuage="html" [code]="codes[3]"></ts-pirsm-code>
+                <ts-prism-code lanuage="html" [code]="codes[3]"></ts-prism-code>
             </ts-checkbox-group>
         </div>
         <div class="form-group">
@@ -76,7 +76,7 @@
             <hr>
             <ts-radio type="dot" [(checked)]="checkeds[5]" [label]="checkeds[5].toString()"></ts-radio>
             <ts-radio type="circle" [(checked)]="checkeds[6]" [label]="checkeds[6].toString()"></ts-radio>
-            <ts-pirsm-code language="html" [code]="codes[4]"></ts-pirsm-code>
+            <ts-prism-code language="html" [code]="codes[4]"></ts-prism-code>
             <p>Radio Group</p>
             <hr>
             <ts-radio-group value="Right" [(value)]="radioValue">
@@ -85,7 +85,7 @@
             </ts-radio-group>
             <br>
             <p>{{radioValue}}</p>
-            <ts-pirsm-code language="html" [code]="codes[5]"></ts-pirsm-code>
+            <ts-prism-code language="html" [code]="codes[5]"></ts-prism-code>
         </div>
     </div>
 </div>

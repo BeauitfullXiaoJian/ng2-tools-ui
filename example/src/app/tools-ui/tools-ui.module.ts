@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 /*modules*/
-import { PirsmCodeModule } from './modules/pirsm-code.module';
+import { PrismCodeModule } from './modules/prism-code.module';
 import { LoadingModule } from './modules/loading-directive.module';
 import { InputModule } from './modules/input-component.module';
 import { IconModule } from './modules/icon-component.module';
@@ -15,7 +15,7 @@ import { PaginationModule } from './modules/pagination.module';
 @NgModule({
   imports: [
     CommonModule,
-    PirsmCodeModule,
+    PrismCodeModule,
     LoadingModule,
     InputModule,
     TabPadModule,
@@ -26,7 +26,7 @@ import { PaginationModule } from './modules/pagination.module';
   ],
   declarations: [],
   exports: [
-    PirsmCodeModule,
+    PrismCodeModule,
     LoadingModule,
     InputModule,
     DatePickerModule,

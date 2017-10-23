@@ -1,2 +1,34 @@
-<ts-dropdown [items]="['Apple','Bananer','Cap']" btnClass="btn-danger" [value]="'Cap'" [select]="true"></ts-dropdown>
-<ts-dropdown [items]="['Apple','Bananer','Cap']" btnClass="btn-danger" [value]="'Cap'" [select]="true" [dropup]="true"></ts-dropdown>
+<ts-tab [tabs]="['Demo','Info']" activeTab="Demo" [pads]="[Demo,Info]" color="dark" type="pills" position="right"></ts-tab>
+<br>
+<div class="card rounded-0" #Demo tab="Demo">
+    <div class="card-body">
+        <h4>Default&Color Dropdown</h4>
+        <hr>
+        <ts-dropdown [items]="['Apple','Bananer','Cap']" title="Dropdown"></ts-dropdown>
+        <ts-dropdown [items]="['Apple','Bananer','Cap']" title="Dropdown" btnClass="btn-primary"></ts-dropdown>
+        <ts-dropdown [items]="['Apple','Bananer','Cap']" title="Dropdown" btnClass="btn-info"></ts-dropdown>        
+        <ts-dropdown [items]="['Apple','Bananer','Cap']" title="Dropdown" btnClass="btn-success"></ts-dropdown>                
+        <ts-dropdown [items]="['Apple','Bananer','Cap']" title="Dropdown" btnClass="btn-warning"></ts-dropdown> 
+        <ts-dropdown [items]="['Apple','Bananer','Cap']" title="Dropdown" btnClass="btn-outline-dark"></ts-dropdown>                        
+        <ts-prism-code language="html" [code]="codes[0]" [codeStyle]="{'background-color':'white','border':'1px solid #e4e4e4'}"></ts-prism-code>
+        <h4>Select Dropdown</h4>
+        <hr>
+        <ts-dropdown [items]="['Apple','Bananer','Cap']" title="Dropdown" [select]="true"></ts-dropdown>
+        <br><br>
+        <ts-dropdown [items]="['Apple','Bananer','Cap']" title="Dropdown" [select]="true" [(value)]="stringValue"></ts-dropdown>
+        <span>value : {{stringValue}}</span>
+        <br><br>
+        <ts-dropdown [items]="['Apple','Bananer','Cap']" title="Dropdown" [select]="true" [useNumber]="1"></ts-dropdown>
+        <br><br>
+        <ts-dropdown [items]="['Apple','Bananer','Cap']" title="Dropdown" [select]="true" [useNumber]="1" [(value)]="numberValue"></ts-dropdown>
+        <span>value : {{numberValue}}</span>
+        <ts-prism-code language="html" [code]="codes[1]" [codeStyle]="{'background-color':'white','border':'1px solid #e4e4e4'}"></ts-prism-code>
+        <h4>Dropup</h4>
+        <hr>
+        <ts-dropdown [items]="['Apple','Bananer','Cap']" title="Dropup" [dropup]="true"></ts-dropdown>
+        <ts-dropdown [items]="['Apple','Bananer','Cap']" title="Dropdown" [select]="true" [value]="'Cap'" [dropup]="true"></ts-dropdown>
+        <ts-prism-code language="html" [code]="codes[2]" [codeStyle]="{'background-color':'white','border':'1px solid #e4e4e4'}"></ts-prism-code>        
+    </div>
+</div>
+<div class="card rounded-0" #Info tab="Info">
+</div>

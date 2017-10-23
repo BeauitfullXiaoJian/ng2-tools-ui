@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
-import { TSPirsmModule, TSTabModule, TSModalModule } from './../../tools-ui';
+import { TSPrismModule, TSTabModule, TSModalModule } from './../../tools-ui';
 import { ExampleComponent } from './example/example.component';
 import { ModalComponent } from './modal/modal.component';
 import { SimpleModalComponent } from './modal/simple-modal.component';
@@ -13,7 +13,7 @@ import { TestModalComponent } from './modal/test-modal.component';
     CommonModule,
     FormsModule,
     TSTabModule,
-    TSPirsmModule,
+    TSPrismModule,
     TSModalModule,
     RouterModule.forChild([
       { path: 'example', component: ExampleComponent },

@@ -8,7 +8,7 @@
             <p>Show a tab</p>
             <ts-tab [tabs]="['A','B','C','D','E','F']" activeTab="A"></ts-tab>
             <p class="text-danger mt-2"><i class="fa fa-code fa-fw"></i>code in your page *.html/template</p>
-            <ts-pirsm-code language="html" [code]="codes[0]"></ts-pirsm-code>
+            <ts-prism-code language="html" [code]="codes[0]"></ts-prism-code>
             <br>
             <p>Use tab change pad (ngIf)</p>
             <ts-tab [tabs]="['First','Second','Third']" [activeTab]="activeTab" (tabChange)="activeTab=$event"></ts-tab>
@@ -28,9 +28,9 @@
             </div>
             <br>
             <p class="text-danger mt-2"><i class="fa fa-code fa-fw"></i>code in your page *.html/template</p>
-            <ts-pirsm-code language="html" [code]="codes[1]"></ts-pirsm-code>
+            <ts-prism-code language="html" [code]="codes[1]"></ts-prism-code>
             <p class="text-danger mt-2"><i class="fa fa-code fa-fw"></i>code in your component *.component.ts</p>
-            <ts-pirsm-code language="typescript" [code]="codes[2]"></ts-pirsm-code>
+            <ts-prism-code language="typescript" [code]="codes[2]"></ts-prism-code>
             <br>
             <p>Use tab change pad (only dom)</p>
             <ts-tab [tabs]="['First','Second','Third']" activeTab="First" [pads]="[tabPadFirst,tabPadSecond,tabPadThird]"></ts-tab>
@@ -50,7 +50,7 @@
             </div>
             <br>
             <p class="text-danger mt-2"><i class="fa fa-code fa-fw"></i>code in your page *.html/template</p>
-            <ts-pirsm-code language="html" [code]="codes[3]"></ts-pirsm-code>
+            <ts-prism-code language="html" [code]="codes[3]"></ts-prism-code>
         </div>
     </div>
 </div>
@@ -63,27 +63,27 @@
         <h5>Input</h5>
         <hr>
         <p>@Input() <span class="text-primary">tabs</span> : Array&lt;string&gt;<span class="text-muted">//the tab list title array</span></p>
-        <ts-pirsm-code language='html' [code]='codes[4]'></ts-pirsm-code>
+        <ts-prism-code language='html' [code]='codes[4]'></ts-prism-code>
         <ts-tab [tabs]="['a','b','c','d']"></ts-tab>
         <br>
 
         <p>@Input() <span class="text-primary">activeTab</span> : string<span class="text-muted">//the active tab title</span></p>
-        <ts-pirsm-code language='html' [code]='codes[5]'></ts-pirsm-code>
+        <ts-prism-code language='html' [code]='codes[5]'></ts-prism-code>
         <ts-tab [tabs]="['a','b','c','d']" activeTab='b'></ts-tab>
         <br>
 
         <p>@Input() <span class="text-primary">position</span> : string<span class="text-muted">//tab position(left,center,right or end),default value : left</span></p>
-        <ts-pirsm-code language='html' [code]='codes[6]'></ts-pirsm-code>
+        <ts-prism-code language='html' [code]='codes[6]'></ts-prism-code>
         <ts-tab [tabs]="['a','b','c','d']" activeTab='b' position="center"></ts-tab>
         <br>
 
         <p>@Input() <span class="text-primary">type</span> : string<span class="text-muted">//tab style(tabs,pills),default value : tabs</span></p>
-        <ts-pirsm-code language='html' [code]='codes[7]'></ts-pirsm-code>
+        <ts-prism-code language='html' [code]='codes[7]'></ts-prism-code>
         <ts-tab [tabs]="['a','b','c','d']" activeTab='a' type="pills"></ts-tab>
         <br>
 
         <p> @Input() <span class="text-primary">color</span> : string<span class="text-muted">//tab color(primary,success...),active on type = 'pills', default value : primary</span></p>
-        <ts-pirsm-code language='html' [code]='codes[8]'></ts-pirsm-code>
+        <ts-prism-code language='html' [code]='codes[8]'></ts-prism-code>
         <ts-tab [tabs]="['a','b','c','d']" activeTab='a' type="pills" color="danger"></ts-tab>
         <br>
         <ts-tab #colorTabs [tabs]="['primary','secondary','success','warning','dark']" activeTab='primary' type="pills" (tabChange)="colorTabs.color=$event"></ts-tab>
@@ -91,7 +91,7 @@
         <br>
 
         <p>@Input() <span class="text-primary">pads</span> : Array&lt;any&gt;<span class="text-muted">//the tab window list</span></p>
-        <ts-pirsm-code language='html' [code]='codes[9]'></ts-pirsm-code>
+        <ts-prism-code language='html' [code]='codes[9]'></ts-prism-code>
         <ts-tab [tabs]="['a','b','c']" activeTab='a' [pads]=[pa,pb,pc]></ts-tab>
         <div #pa tab="a"> Raw denim you probably haven't heard of them jean shorts Austin. Nesciunt tofu stumptown aliqua, retro synth master cleanse. Mustache cliche tempor, williamsburg carles vegan helvetica. Reprehenderit butcher retro keffiyeh dreamcatcher synth.
             Cosby sweater eu banh mi, qui irure terry richardson ex squid. Aliquip placeat salvia cillum iphone. Seitan aliquip quis cardigan american apparel, butcher voluptate nisi qui.</div>
@@ -107,6 +107,6 @@
         <p>@Output() <span class="text-primary">tabChange</span> : EventEmitter&lt;string&gt;//$event:the acitve tab title</p>
         <ts-tab [tabs]="['a','b','c','d']" (tabChange)="testEvent=$event"></ts-tab>
         <p>{{testEvent||'please click a tab title'}}</p>
-        <ts-pirsm-code language='html' [code]='codes[10]'></ts-pirsm-code>
+        <ts-prism-code language='html' [code]='codes[10]'></ts-prism-code>
     </div>
 </div>

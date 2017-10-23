@@ -9,7 +9,7 @@ export class DropdownComponent {
 
   @Input() open: boolean
   @Input() btnClass: string
-  @Input() items: Array<string | { value: any, text: string }>
+  @Input() items: Array<string | number | { value: any, text: string }>
   @Input() title: string
   @Input() select: boolean
   @Input() dropup: boolean
@@ -81,7 +81,7 @@ export class DropdownComponent {
     }
     else if (this.items.length > 0) {
       this.items.forEach(e => {
-        items.push(typeof e === 'string' ? { value: e, text: e } : e)
+        items.push(typeof e === 'string' || typeof e === 'number' ? { value: e, text: e } : e)
       })
     }
     return items

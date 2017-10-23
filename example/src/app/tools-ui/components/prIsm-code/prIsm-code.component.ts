@@ -19,11 +19,11 @@ export const CODE_LANGUAGE = {
 }
 
 @Component({
-  selector: 'ts-pirsm-code',
-  templateUrl: './pirsm-code.component.html',
-  styleUrls: ['./pirsm-code.component.css']
+  selector: 'ts-prism-code',
+  templateUrl: './prism-code.component.html',
+  styleUrls: ['./prism-code.component.css']
 })
-export class PirsmCodeComponent implements OnChanges {
+export class PrismCodeComponent implements OnChanges {
 
   @Input() language: string
   @Input() code: string

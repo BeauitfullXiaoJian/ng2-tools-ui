@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { TSPirsmModule, TSIconModule, TSTabModule, TSDateModule } from './../../tools-ui';
+import { TSPrismModule, TSIconModule, TSTabModule, TSDateModule } from './../../tools-ui';
 import { CalendarComponent } from './calendar/calendar.component';
 
 @NgModule({
   imports: [
     CommonModule,
-    TSPirsmModule,
+    TSPrismModule,
     TSIconModule,
     TSTabModule,
     TSDateModule,
