@@ -26,4 +26,8 @@ export class DropdownComponent {
 
   numberValue = 2
   stringValue = "Cap"
+
+  doAction(){
+    
+  }
 }

@@ -6,20 +6,23 @@
         <hr>
         <ts-dropdown [items]="['Apple','Bananer','Cap']" title="Dropdown"></ts-dropdown>
         <ts-dropdown [items]="['Apple','Bananer','Cap']" title="Dropdown" btnClass="btn-primary"></ts-dropdown>
-        <ts-dropdown [items]="['Apple','Bananer','Cap']" title="Dropdown" btnClass="btn-info"></ts-dropdown>        
-        <ts-dropdown [items]="['Apple','Bananer','Cap']" title="Dropdown" btnClass="btn-success"></ts-dropdown>                
-        <ts-dropdown [items]="['Apple','Bananer','Cap']" title="Dropdown" btnClass="btn-warning"></ts-dropdown> 
-        <ts-dropdown [items]="['Apple','Bananer','Cap']" title="Dropdown" btnClass="btn-outline-dark"></ts-dropdown>                        
+        <ts-dropdown [items]="['Apple','Bananer','Cap']" title="Dropdown" btnClass="btn-info"></ts-dropdown>
+        <ts-dropdown [items]="['Apple','Bananer','Cap']" title="Dropdown" btnClass="btn-success"></ts-dropdown>
+        <ts-dropdown [items]="['Apple','Bananer','Cap']" title="Dropdown" btnClass="btn-warning"></ts-dropdown>
+        <ts-dropdown [items]="['Apple','Bananer','Cap']" title="Dropdown" btnClass="btn-outline-dark"></ts-dropdown>
         <ts-prism-code language="html" [code]="codes[0]" [codeStyle]="{'background-color':'white','border':'1px solid #e4e4e4'}"></ts-prism-code>
         <h4>Select Dropdown</h4>
         <hr>
         <ts-dropdown [items]="['Apple','Bananer','Cap']" title="Dropdown" [select]="true"></ts-dropdown>
-        <br><br>
+        <br>
+        <br>
         <ts-dropdown [items]="['Apple','Bananer','Cap']" title="Dropdown" [select]="true" [(value)]="stringValue"></ts-dropdown>
         <span>value : {{stringValue}}</span>
-        <br><br>
+        <br>
+        <br>
         <ts-dropdown [items]="['Apple','Bananer','Cap']" title="Dropdown" [select]="true" [useNumber]="1"></ts-dropdown>
-        <br><br>
+        <br>
+        <br>
         <ts-dropdown [items]="['Apple','Bananer','Cap']" title="Dropdown" [select]="true" [useNumber]="1" [(value)]="numberValue"></ts-dropdown>
         <span>value : {{numberValue}}</span>
         <ts-prism-code language="html" [code]="codes[1]" [codeStyle]="{'background-color':'white','border':'1px solid #e4e4e4'}"></ts-prism-code>
@@ -27,7 +30,18 @@
         <hr>
         <ts-dropdown [items]="['Apple','Bananer','Cap']" title="Dropup" [dropup]="true"></ts-dropdown>
         <ts-dropdown [items]="['Apple','Bananer','Cap']" title="Dropdown" [select]="true" [value]="'Cap'" [dropup]="true"></ts-dropdown>
-        <ts-prism-code language="html" [code]="codes[2]" [codeStyle]="{'background-color':'white','border':'1px solid #e4e4e4'}"></ts-prism-code>        
+        <ts-prism-code language="html" [code]="codes[2]" [codeStyle]="{'background-color':'white','border':'1px solid #e4e4e4'}"></ts-prism-code>
+        <h4>Event/Link Dropdown</h4>
+        <div class="btn-group" ts-dropdown #drop="tsDropdown">
+            <button type="button" class="btn btn-danger dropdown-toggle">Action Button</button>
+            <div class="dropdown-menu">
+                <button class="dropdown-item" (click)="doAction()">Action</button>
+                <button class="dropdown-item">Another action</button>
+                <button class="dropdown-item">Something else here</button>
+                <div class="dropdown-divider"></div>
+                <button class="dropdown-item">Separated link</button>
+            </div>
+        </div>
     </div>
 </div>
 <div class="card rounded-0" #Info tab="Info">
