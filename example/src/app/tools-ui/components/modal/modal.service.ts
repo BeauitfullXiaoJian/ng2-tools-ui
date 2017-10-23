@@ -13,9 +13,12 @@ export class ModalService {
     private handel: TaskHandle
     public modal: ComponentRef<any>
 
-    constructor(private applicationRef: ApplicationRef, private componentFactoryResolver: ComponentFactoryResolver, private injector: Injector) {
-        this.baseComponent = componentFactoryResolver.resolveComponentFactory(ModalComponent);
-        this.windowCmptRef = this.baseComponent.create(injector)
+    constructor(private applicationRef: ApplicationRef, private componentFactoryResolver: ComponentFactoryResolver, private injector: Injector) { }
+
+    init() {
+        if (this.baseComponent != undefined || this.baseComponent != null) return
+        this.baseComponent = this.componentFactoryResolver.resolveComponentFactory(ModalComponent);
+        this.windowCmptRef = this.baseComponent.create(this.injector)
         this.applicationRef.attachView(this.windowCmptRef.hostView)
         const containerEl = document.querySelector('body')
         containerEl.appendChild(this.windowCmptRef.location.nativeElement);
@@ -23,6 +26,7 @@ export class ModalService {
     }
 
     create(content: any, options?: { size: string }): ModalService {
+        this.init()
         this.modalComponent = content
         this.modal = this.windowCmptRef.instance.loadComponent(content)
         if (options !== undefined) {
