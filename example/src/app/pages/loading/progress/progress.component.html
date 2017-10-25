@@ -1,0 +1,34 @@
+<div class="card rounded-0">
+    <div class="card-body">
+        <h4>Color</h4>
+        <hr>
+        <ts-progress [value]="progress" bgColor="bg-primary" [useLable]="true"></ts-progress>
+        <br>
+        <ts-progress [value]="10" bgColor="bg-secondary"></ts-progress>
+        <br>
+        <ts-progress [value]="20" bgColor="bg-danger"></ts-progress>
+        <br>
+        <ts-progress [value]="30" bgColor="bg-success"></ts-progress>
+        <br>
+        <ts-progress [value]="40" bgColor="bg-warning"></ts-progress>
+        <br>
+        <ts-progress [value]="50" bgColor="bg-info"></ts-progress>
+        <br>
+        <ts-progress [value]="60" bgColor="bg-light"></ts-progress>
+        <br>
+        <ts-progress [value]="70" bgColor="bg-dark"></ts-progress>
+        <br>
+
+        <h4>Striped/Label/Anmated</h4>
+        <hr>
+        <ts-progress [value]="10" [useLable]="true"></ts-progress>
+        <br>
+        <ts-progress [value]="20" [useLable]="true" [striped]="true" ></ts-progress>
+        <br>
+        <ts-progress [value]="30" [useLable]="true" [striped]="true" [animated]="true"></ts-progress>
+        <br>
+        <ts-progress [value]="40" [useLable]="true" [striped]="true" [animated]="true" bgColor="bg-warning"></ts-progress>
+        <br>
+        <button (click)="progress=0" class="btn btn-success">Test</button>
+    </div>
+</div>
