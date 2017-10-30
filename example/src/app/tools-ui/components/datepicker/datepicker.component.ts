@@ -8,7 +8,8 @@ const MAX_MONTH = 12
 @Component({
   selector: 'ts-datepicker',
   templateUrl: './datepicker.component.html',
-  styleUrls: ['./datepicker.component.css']
+  styleUrls: ['./datepicker.component.css'],
+  exportAs: "datePicker"
 })
 export class DatepickerComponent implements OnInit {
 
@@ -27,13 +28,13 @@ export class DatepickerComponent implements OnInit {
 
   @Output() activeDateChange = new EventEmitter<{ year: number, month: number, day: number }>()
 
-
-
   year: number
 
   month: number
 
   day: number
+
+  show: boolean
 
   get days(): number[] {
     let date = new Date(this.year, this.month, 0);
@@ -90,7 +91,8 @@ export class DatepickerComponent implements OnInit {
     //style
     this.btnClass = "btn-dark"
     this.textClass = "text-dark"
-    this.activeClass="bg-dark text-light"
+    this.activeClass = "bg-dark text-light"
+    this.show = false
   }
 
   ngOnInit() {
@@ -143,6 +145,10 @@ export class DatepickerComponent implements OnInit {
     if (this.year > MIN_YEAR) {
       this.year--
     }
+  }
+
+  toggle() {
+    this.show = !this.show
   }
 
 }
