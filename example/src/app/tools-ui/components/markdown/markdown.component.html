@@ -30,7 +30,7 @@
             <div class="w-50">
                 <textarea #editor class="form-control border-0 h-100" [(ngModel)]="content"></textarea>
             </div>
-            <div class="w-50 markdown" [innerHtml]="makerdownHtml"></div>
+            <div class="w-50 markdown h-100" [innerHtml]="makerdownHtml"></div>
         </div>
         <!--code pad-->
         <div [ngStyle]="{'height':height}" *ngIf="!preview&&!showPreviewPad">

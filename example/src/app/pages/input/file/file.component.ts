@@ -9,16 +9,14 @@ export class FileComponent {
   file: File
 
   codes = [
-    `<div class="input-group">
-      <input name="file" #tsFile='tsFile' ts-file class="form-control" placeholder="No file selected" (onChange)="file=$event" type="text">
-      <span class="input-group-btn">
-          <div class="btn-group" role="group" aria-label="Basic example">
-              <button (click)="tsFile.openFileDialog()" class="btn btn-dark" type="button"><ts-icon name="folder-o" size="lg"></ts-icon>Open File</button>
-              <button (click)="tsFile.removeFile()" class="btn btn-danger"><ts-icon name="trash-o" size="lg"></ts-icon></button>
-            </div>
-      </span>
+    `<input ts-file #tsFile='tsFile' class="d-none" type="file" (fileChange)="file=$event">
+  <button (click)="tsFile.openFileDialog()" class="btn btn-dark" type="button">
+    <ts-icon name="folder-o" size="lg"></ts-icon>Open File
+  </button>
+  <div class="btn-group ml-3" role="group" aria-label="Basic example">
+    <button (click)="tsFile.openFileDialog()" class="btn btn-dark" type="button"><ts-icon name="folder-o" size="lg"></ts-icon>Open File</button>
+    <button (click)="tsFile.removeFile()" class="btn btn-danger"><ts-icon name="trash-o" size="lg"></ts-icon></button>
   </div>
-  <br>
   <pre *ngIf="!!file" class="text-primary">
     FileName : {{file.name}}
     FileSize : {{file.size}}

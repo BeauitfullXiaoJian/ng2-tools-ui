@@ -35,16 +35,16 @@ export class ExampleComponent {
     get offset(): number
 
     //get pagination params
-    get pageData(): any 
+    get pageData(): { [key: string]: number }
 
     //get pagination params with search params or other params
-    getpageDataWith(params: any = {}): any
+    getpageDataWith(params: any = {}): { limit: number, offset: number, [key: string]: string | number }
 
     //max page number value
     get maxPage(): number
       
     //clean object,setting default value
-    reset() {}
+    reset(): void {}
 
     //has next page
     hasNext(): boolean {}

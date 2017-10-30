@@ -1,6 +1,8 @@
-<div class="card rounded-0">
+<ts-tab [tabs]="['Demo','Info']" activeTab="Info" [pads]="[Demo,Info]" color="dark" type="pills" position="right"></ts-tab>
+<br>
+<div class="card rounded-0" #Demo tab="Demo">
     <div class="card-body">
-        <h4>Default (btn-*)<span class="pull-right"><i class="fa fa-eye"></i></span></h4>
+        <h4>Default (btn-*)<span class="pull-right"></span></h4>
         <hr>
         <div class="pt-3 pb-3">
             <button (click)="showLoading(loadingButton1)" ts-loading class="btn btn-primary" title="Loading Button" #loadingButton1="tsLoading"></button>
@@ -41,5 +43,58 @@
             <button (click)="showLoading(loadingButton23)" ts-loading class="btn btn-lg btn-outline-dark" title="Dark" #loadingButton23="tsLoading"></button>
             <ts-prism-code [language]="language.html" [code]="codes[3]"></ts-prism-code>
         </div>
+    </div>
+</div>
+<div class="card rounded-0" #Info tab="Info">
+    <div class="card-body">
+        <h4>Selector</h4>
+        <hr><span class="badge badge-dark">Directive</span>
+        <code>button[ts-loading]</code><br><br>
+        <h6>Exported as <small><code>tsLoading</code></small></h6>
+        <h4 class="mt-3">Input</h4>
+        <table class="table table-sm mt-3">
+            <tbody>
+                <tr>
+                    <td class="label-cell"><code>title</code></td>
+                    <td class="content-cell">
+                        <p class="description">the title for button</p>
+                        <div class="meta">
+                            <div>
+                                <i>Type: </i><code>string</code>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Methods</h4>
+        <table class="table table-sm mt-3">
+            <tbody>
+                <tr>
+                    <td class="label-cell"><code>showLoading</code></td>
+                    <td class="content-cell">
+                        <p><code>showLoading()=>void</code></p>
+                        <div class="meta">
+                            show loading
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>Set&Get</h4>
+        <table class="table table-sm mt-3">
+            <tbody>
+                <tr>
+                    <td class="label-cell"><code>complete</code></td>
+                    <td class="content-cell">
+                        <p><code>set complete(ready: boolean) {{"{}"}}</code></p>
+                        <p><code>get complete(): boolean {{"{}"}}</code></p>
+                        <div class="meta">
+                            set the button status : (true/false)
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
     </div>
 </div>
