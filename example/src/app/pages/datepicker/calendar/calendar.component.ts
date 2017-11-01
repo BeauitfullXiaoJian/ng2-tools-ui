@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare const window:any;
 
 @Component({
   selector: 'app-calendar',
@@ -9,8 +10,10 @@ export class CalendarComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() { }
-
+  ngOnInit() {
+    var el = document.getElementById('items');
+    var sortable = window.Sortable.create(el);
+  }
 
   date = {}
 }
