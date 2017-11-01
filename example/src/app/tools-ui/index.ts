@@ -13,6 +13,7 @@ export { MarkdownModule as TSMarkdownModule } from './modules/markdown.module';
 export { DropdownModule as TSDropdownModule } from './modules/dropdown.module';
 export { ProgressModule as TSProgressModule } from './modules/progress.module';
 export { OpenCardModule as TSOpenCardModule } from './modules/open-card.module';
+export { ConfirmModule as TSConfirmModule } from './modules/confirm.module';
 
 /*const configs*/
 export { CODE_LANGUAGE } from './components/prism-code/prism-code.component';
