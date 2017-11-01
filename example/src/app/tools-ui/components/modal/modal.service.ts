@@ -10,7 +10,7 @@ export class ModalService {
     private baseComponent: ComponentFactory<ModalComponent>
     private windowCmptRef: ComponentRef<ModalComponent>
     private task: Task
-    private handel: TaskHandle
+    private handle: TaskHandle
     public modal: ComponentRef<any>
 
     constructor(private applicationRef: ApplicationRef, private componentFactoryResolver: ComponentFactoryResolver, private injector: Injector) { }
@@ -22,7 +22,7 @@ export class ModalService {
         this.applicationRef.attachView(this.windowCmptRef.hostView)
         const containerEl = document.querySelector('body')
         containerEl.appendChild(this.windowCmptRef.location.nativeElement);
-        this.task = new Task(handle => this.handel = handle)
+        this.task = new Task(handle => { this.handle = handle; console.log(this.handle) })
     }
 
     create(content: any, options?: { size: string }): ModalService {
@@ -37,7 +37,7 @@ export class ModalService {
 
     close(params?: any) {
         this.windowCmptRef.instance.close()
-        this.handel.ready(params)
+        if (this.handle) this.handle.ready(params)
     }
 
     dismiss() {

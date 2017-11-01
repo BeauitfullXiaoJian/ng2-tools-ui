@@ -32,3 +32,5 @@ export { Pagination } from './classes/pagination.class';
 export { OssService as TSOssService } from './services/oss.service';
 export { DataService as TSDataService } from './services/data.service';
 export { ModalService as TSModalService } from './components/modal/modal.service';
+export { ConfirmService as TSConfirmService } from './components/confirm/confirm.service';
+
