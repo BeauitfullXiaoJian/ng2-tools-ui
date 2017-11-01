@@ -7,6 +7,7 @@ import { ModalComponent } from './modal/modal.component';
 import { SimpleModalComponent } from './modal/simple-modal.component';
 import { TestModalComponent } from './modal/test-modal.component';
 import { CardComponent } from './card/card.component';
+import { ConfirmComponent } from './confirm/confirm.component';
 
 @NgModule({
   imports: [
@@ -20,6 +21,7 @@ import { CardComponent } from './card/card.component';
       { path: 'example', component: ExampleComponent },
       { path: 'modal', component: ModalComponent },
       { path: 'card', component: CardComponent },
+      { path: 'confirm', component: ConfirmComponent },
     ])
   ],
   declarations: [
@@ -28,6 +30,7 @@ import { CardComponent } from './card/card.component';
     TestModalComponent,
     SimpleModalComponent,
     CardComponent,
+    ConfirmComponent,
   ],
   entryComponents: [
     TestModalComponent,
