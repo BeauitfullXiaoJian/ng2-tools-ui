@@ -5,7 +5,7 @@ export class Pagination {
         return (this.page - 1) * this.limit
     }
 
-    get pageData(): any {
+    get pageData(): { [key: string]: number } {
         return { limit: this.limit, offset: this.offset }
     }
 
@@ -13,13 +13,13 @@ export class Pagination {
         return Math.ceil(this.total / this.limit)
     }
 
-    getpageDataWith(params: any = {}): any {
+    getpageDataWith(params: any = {}): { limit: number, offset: number, [key: string]: string | number } {
         params.limit = this.limit
         params.offset = this.offset
         return params
     }
 
-    reset() {
+    reset(): void {
         this.total = 0
         this.page = 1
         this.limit = 10

@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { RouterModule, PreloadAllModules } from '@angular/router';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { TSOssModule } from './tools-ui';
 
@@ -10,6 +11,7 @@ import { TSOssModule } from './tools-ui';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     TSOssModule.forRoot(),
     RouterModule.forRoot([
       { path: 'loading', loadChildren: 'app/pages/loading/loading.module#LoadingModule' },

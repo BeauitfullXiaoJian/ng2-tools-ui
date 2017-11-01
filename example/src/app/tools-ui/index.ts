@@ -11,6 +11,8 @@ export { ModalModule as TSModalModule } from './modules/modal.module';
 export { PaginationModule as TSPaginationModule } from './modules/pagination.module';
 export { MarkdownModule as TSMarkdownModule } from './modules/markdown.module';
 export { DropdownModule as TSDropdownModule } from './modules/dropdown.module';
+export { ProgressModule as TSProgressModule } from './modules/progress.module';
+export { OpenCardModule as TSOpenCardModule } from './modules/open-card.module';
 
 /*const configs*/
 export { CODE_LANGUAGE } from './components/prism-code/prism-code.component';

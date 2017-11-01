@@ -41,7 +41,7 @@ export class MarkdownComponent {
     let renderer = new window.marked.Renderer();
 
     renderer.code = (code: string, language: string): string => {
-      return `<pre class='language-${language}'><code>${Prism.highlight(code, LANGUAGE[language])}</code></pre>`
+      return `<pre class='language-${language}'><code>${Prism.highlight(code, LANGUAGE[language] || LANGUAGE.html)}</code></pre>`
     }
 
     renderer.blockquote = (quote: string): string => {
@@ -88,7 +88,9 @@ export class MarkdownComponent {
   insertCode() {
     this.insertText(`\`\`\`javascript
 
-    ...
+    function example(){
+      console.log('hello world~')
+    }
 
 \`\`\``)
   }
@@ -130,7 +132,7 @@ export class MarkdownComponent {
   }
 
   insertImage() {
-    this.insertText(`![]()`)
+    this.insertText(`![title](http://www.hello1024.top/flat-ui/img/box-image/2.jpg)`)
   }
 
   insertLink() {

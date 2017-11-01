@@ -5,7 +5,7 @@ import { InputTextComponent } from './../components/input-text/input-text.compon
 import { InputVideoComponent } from './../components/input-video/input-video.component';
 import { InputImageComponent } from './../components/input-image/input-image.component';
 import { InputImagesComponent } from './../components/input-images/input-images.component';
-import { InputFileComponent } from './../components/input-file/input-file.component';
+import { InputFileDirective } from './../directives/input-file.directive';
 
 @NgModule({
   imports: [
@@ -16,14 +16,14 @@ import { InputFileComponent } from './../components/input-file/input-file.compon
     InputVideoComponent,
     InputImageComponent,
     InputImagesComponent,
-    InputFileComponent,
+    InputFileDirective,
   ],
   exports: [
     InputTextComponent,
     InputVideoComponent,
     InputImageComponent,
     InputImagesComponent,
-    InputFileComponent,
+    InputFileDirective,
   ]
 })
 export class InputModule { }

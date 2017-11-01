@@ -5,9 +5,14 @@
         <h4>Default Datepicker</h4>
         <hr>
         <div class="pt-3 pb-3">
-            <ts-datepicker [(activeDate)]="date" btnClass="btn-danger" textClass="text-danger" activeClass="bg-danger text-light" class="d-inline-block"></ts-datepicker>
-            <ts-datepicker [(activeDate)]="date" btnClass="btn-primary" textClass="text-primary" activeClass="bg-primary text-light" class="d-inline-block"></ts-datepicker>
-            <ts-datepicker [(activeDate)]="date" btnClass="btn-warning" textClass="text-warning" activeClass="bg-warning text-dark" class="d-inline-block"></ts-datepicker>
+            <div class="input-group">
+                <label class="input-group-addon">Date</label>
+                <input class="form-control" (click)="datepicker.toggle()">
+                <label class="input-group-addon"><i class="fa fa-calendar fa-fw"></i></label>
+            </div>
+            <ts-datepicker #datepicker="datePicker" [(activeDate)]="date" btnClass="btn-danger" textClass="text-danger" activeClass="bg-danger text-light" class="d-inline-block "></ts-datepicker>
+            <!-- <ts-datepicker [(activeDate)]="date" btnClass="btn-primary" textClass="text-primary" activeClass="bg-primary text-light" class="d-inline-block"></ts-datepicker>
+            <ts-datepicker [(activeDate)]="date" btnClass="btn-warning" textClass="text-warning" activeClass="bg-warning text-dark" class="d-inline-block"></ts-datepicker> -->
             <pre>{{date|json}}</pre>
         </div>
         <h4>Labels Setting</h4>
