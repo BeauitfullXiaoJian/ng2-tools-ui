@@ -1,14 +1,98 @@
-<!-- <ts-open-card></ts-open-card> -->
-
-<button class="btn btn-primary" (click)="showPrimaryConfirm()">Confirm</button>
-<button class="btn btn-secondary" (click)="showSecondaryConfirm()">Confirm</button>
-<button class="btn btn-success" (click)="showSuccessConfirm()">Confirm</button>
-<button class="btn btn-danger" (click)="showDangerConfirm()">Confirm</button>
-<button class="btn btn-warning" (click)="showWarningConfirm()">Confirm</button>
-<button class="btn btn-info" (click)="showInfoConfirm()">Confirm</button>
-<button class="btn btn-light" (click)="showLightConfirm()">Confirm</button>
-<button class="btn btn-dark" (click)="showDarkConfirm()">Confirm</button>
-<button class="btn btn-dark" (click)="showToast()">Toast</button>
-
-
-<pre>{{log}}</pre>
+<ts-tab class="text-right" [tabs]="['Demo','Info']" activeTab="Info" [pads]="[Demo,Info]" position="right" type="pills" color="dark"></ts-tab>
+<br>
+<div class="card rounded-0" #Demo tab="Demo">
+    <div class="card-body">
+        <h4>Colorful Confirm</h4>
+        <hr>
+        <div class="pt-3 pb-3">
+            <button class="btn btn-primary" (click)="showPrimaryConfirm()">Confirm</button>
+            <button class="btn btn-secondary" (click)="showSecondaryConfirm()">Confirm</button>
+            <button class="btn btn-success" (click)="showSuccessConfirm()">Confirm</button>
+            <button class="btn btn-danger" (click)="showDangerConfirm()">Confirm</button>
+            <button class="btn btn-warning" (click)="showWarningConfirm()">Confirm</button>
+            <button class="btn btn-info" (click)="showInfoConfirm()">Confirm</button>
+            <button class="btn btn-light" (click)="showLightConfirm()">Confirm</button>
+            <button class="btn btn-dark" (click)="showDarkConfirm()">Confirm</button>
+            <br>
+            <pre class="mt-3 bg-light"> Console Log:
+                {{log}}</pre>
+            <ts-prism-code language="typescript" [code]="codes[0]" [codeStyle]="{'background-color':'#3c3c3c'}"></ts-prism-code>
+        </div>
+        <h4>Colorful Toast</h4>
+        <hr>
+        <div class="pt-3 pb-3">
+            <button class="btn btn-primary" (click)="showPrimaryToast()">Toast</button>
+            <button class="btn btn-secondary" (click)="showSecondaryToast()">Toast</button>
+            <button class="btn btn-success" (click)="showSuccessToast()">Toast</button>
+            <button class="btn btn-danger" (click)="showDangerToast()">Toast</button>
+            <button class="btn btn-warning" (click)="showWarningToast()">Toast</button>
+            <button class="btn btn-info" (click)="showInfoToast()">Toast</button>
+            <button class="btn btn-light" (click)="showLightToast()">Toast</button>
+            <button class="btn btn-dark" (click)="showDarkToast()">Toast</button>
+            <br><br>
+            <button class="btn btn-outline-primary" (click)="showToast('bg-primary')">Diy Tost</button>
+            <button class="btn btn-outline-secondary" (click)="showToast('bg-secondary')">Diy Tost</button>
+            <button class="btn btn-outline-success" (click)="showToast('bg-success')">Diy Tost</button>
+            <button class="btn btn-outline-danger" (click)="showToast('bg-danger')">Diy Tost</button>
+            <button class="btn btn-outline-warning" (click)="showToast('bg-warning')">Diy Tost</button>
+            <button class="btn btn-outline-info" (click)="showToast('bg-info')">Diy Tost</button>
+            <!-- <button class="btn btn-outline-light" (click)="showToast('bg-light')">Diy Tost</button> -->
+            <button class="btn btn-outline-dark" (click)="showToast('bg-dark')">Diy Tost</button><br>
+            <ts-prism-code language="typescript" [code]="codes[1]" [codeStyle]="{'background-color':'#3c3c3c'}"></ts-prism-code>
+        </div>
+    </div>
+</div>
+<div class="card rounded-0" #Info tab="Info">
+    <div class="card-body">
+        <h4>TSConfirmService</h4><span class="badge badge-primary">Service</span>
+        <hr>
+        <h4>Methods</h4>
+        <table class="table table-sm mt-3">
+            <tbody>
+                <tr>
+                    <td class="label-cell"><code>create</code></td>
+                    <td class="content-cell">
+                        <ts-prism-code language="typescript" [code]="codes[2]" [codeStyle]="{'background-color':'#3c3c3c'}"></ts-prism-code>
+                        <div class="meta">
+                            create a new confirm window
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label-cell"><code>primary</code></td>
+                    <td class="content-cell">
+                        <ts-prism-code language="typescript" [code]="codes[3]" [codeStyle]="{'background-color':'#3c3c3c'}"></ts-prism-code>
+                        <div class="meta">
+                            create a primary confirm window , other same method : <code>( primary, secondary, success, danger, info, light, dark)</code>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <h4>ToastService</h4><span class="badge badge-primary">Service</span>
+        <hr>
+        <h4>Methods</h4>
+        <table class="table table-sm mt-3">
+            <tbody>
+                <tr>
+                    <td class="label-cell"><code>create</code></td>
+                    <td class="content-cell">
+                        <ts-prism-code language="typescript" [code]="codes[4]" [codeStyle]="{'background-color':'#3c3c3c'}"></ts-prism-code>
+                        <div class="meta">
+                            create a new toast
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label-cell"><code>primary</code></td>
+                    <td class="content-cell">
+                        <ts-prism-code language="typescript" [code]="codes[5]" [codeStyle]="{'background-color':'#3c3c3c'}"></ts-prism-code>
+                        <div class="meta">
+                            create a primary toast , other same method : <code>( primary, secondary, success, danger, info, light, dark)</code>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

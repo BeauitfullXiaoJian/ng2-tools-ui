@@ -1,4 +1,4 @@
-/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript+php+php-extras+typescript */
+/* http://prismjs.com/download.html?themes=prism&languages=markup+css+clike+javascript */
 
 
 /**
@@ -7,6 +7,7 @@
  * @author Lea Verou
  */
 
+code[class*="language-"],
 pre[class*="language-"] {
     color: black;
     background: none;

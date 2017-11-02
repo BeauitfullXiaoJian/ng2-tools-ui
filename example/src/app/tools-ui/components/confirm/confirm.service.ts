@@ -4,8 +4,6 @@ import { Task } from './../../classes/task.class';
 
 @Injectable()
 export class ConfirmService {
-
-
     private baseComponent: ComponentFactory<ConfirmComponent>
     private windowCmptRef: ComponentRef<ConfirmComponent>
 

@@ -9,23 +9,22 @@ import {
 } from '@angular/animations';
 @Component({
   template: `
-  <div *ngIf="show" [@toastAnimate] class="d-flex fixed-top h-100 w-100">
-    <div class="d-flex" [ngClass]="{'align-self-centerd-flex w-100':position==='center'}">
-      <div class="alert alert-success" role="alert" style="width:20rem;" *ngIf="show" [@toastAnimate] [ngClass]="{'m-auto':position==='center'}">
-        <h4 class="alert-heading">{{title}}
-          <button (click)="show = false" type="button" class="close pull-right {{closeClass}}" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-        </h4>
-        <hr class="mb-0">
-        <p class="mb-0 mt-0">{{message}}</p>
-      </div>
+    <div *ngIf="show" class="{{positionClass}} position-fixed alert {{bgClass}} m-2" role="alert" style="width:20rem;z-index:9999" [@toastAnimate] >
+      <h6 class="alert-heading">{{title}}
+        <button (click)="show = false" type="button" class="close pull-right {{closeClass}}" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </h6>
+      <hr class="mb-2">
+      <p class="mb-0 mt-0">{{message}}</p>
     </div>
-  </div>
   `,
   styles: [
     '.close {cursor:pointer;}',
-    '.btn-link {text-decoration:none;cursor:pointer;}',
+    '.top-0 {top:0}',
+    '.bottom-0 {bottom:0}',
+    '.left-0 {left:0}',
+    '.right-0 {right:0;}',
   ],
   animations: [
     trigger('toastAnimate', [
@@ -44,19 +43,19 @@ export class ToastComponent {
 
   @Input() closeClass: string
 
-  @Input() position: string
+  @Input() positionClass: string
 
   @Input() timeOut: number
 
   show = true
 
   constructor() {
-    this.position = 'center'
+    this.positionClass = 'right-0'
   }
 
   play() {
     this.show = true
-    // setTimeout(_ => this.show = false, this.timeOut)
+    setTimeout(_ => this.show = false, this.timeOut)
   }
 
 }
