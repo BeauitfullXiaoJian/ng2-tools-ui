@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { TSConfirmService } from './../../../tools-ui';
+import { TSConfirmService, TSToastService } from './../../../tools-ui';
 
 @Component({
   templateUrl: './confirm.component.html',
@@ -8,7 +8,7 @@ export class ConfirmComponent implements OnInit {
 
   log = ''
 
-  constructor(private confirmService: TSConfirmService) { }
+  constructor(private confirmService: TSConfirmService, private toastService: TSToastService) { }
 
   ngOnInit() { }
 
@@ -49,6 +49,10 @@ export class ConfirmComponent implements OnInit {
     this.log += `
     ${type}:confirm
     `
+  }
+
+  showToast() {
+    this.toastService.success("Success", "Aww yeah, you successfully read this important alert message .")
   }
 
 }

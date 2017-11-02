@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ConfirmComponent } from './../components/confirm/confirm.component';
-import { ConfirmDirective } from './../components/confirm/confirm.directive';
 import { ConfirmService } from './../components/confirm/confirm.service';
 
 @NgModule({
@@ -10,7 +9,6 @@ import { ConfirmService } from './../components/confirm/confirm.service';
   ],
   declarations: [
     ConfirmComponent,
-    ConfirmDirective
   ],
   entryComponents: [
     ConfirmComponent,

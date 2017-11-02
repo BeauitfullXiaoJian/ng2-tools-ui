@@ -1,6 +1,5 @@
 
 import { Component, Input } from '@angular/core';
-import { ConfirmService } from './confirm.service';
 import { Task, TaskHandle } from './../../classes/task.class';
 
 @Component({
@@ -23,7 +22,6 @@ import { Task, TaskHandle } from './../../classes/task.class';
       </div>
     </div>
   </div>
-      
   `,
   styles: [
     '.close {cursor:pointer;}',
@@ -48,7 +46,7 @@ export class ConfirmComponent {
 
   @Input() btnClass: string
 
-  private show = true
+  show = true
 
   private task: Task
 

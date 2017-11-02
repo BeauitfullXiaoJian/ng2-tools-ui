@@ -14,6 +14,7 @@ export { DropdownModule as TSDropdownModule } from './modules/dropdown.module';
 export { ProgressModule as TSProgressModule } from './modules/progress.module';
 export { OpenCardModule as TSOpenCardModule } from './modules/open-card.module';
 export { ConfirmModule as TSConfirmModule } from './modules/confirm.module';
+export { ToastModule as TSToastModule } from './modules/toast.module';
 
 /*const configs*/
 export { CODE_LANGUAGE } from './components/prism-code/prism-code.component';
@@ -33,4 +34,5 @@ export { OssService as TSOssService } from './services/oss.service';
 export { DataService as TSDataService } from './services/data.service';
 export { ModalService as TSModalService } from './components/modal/modal.service';
 export { ConfirmService as TSConfirmService } from './components/confirm/confirm.service';
+export { ToastService as TSToastService } from './components/toast/toast.service';
 
