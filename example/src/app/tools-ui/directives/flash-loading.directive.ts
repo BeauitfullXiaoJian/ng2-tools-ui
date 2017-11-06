@@ -19,7 +19,7 @@ export class FlashLoadingDirective implements AfterViewInit {
     flash.style.lineHeight = dom.clientHeight + 'px';
     flash.style.position = 'block';
     flash.style.transform = `translate3d(0px, -${dom.clientHeight}px, 0px)`;
-    flash.innerHTML = '<i class="fa fa-spinner fa-pulse"></i>加载中...';
+    flash.innerHTML = '<i class="fa fa-spinner fa-pulse"></i>Loading...';
     dom.parentNode.appendChild(flash);
   }
 
